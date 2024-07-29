@@ -16,12 +16,4 @@ const router = createRouter({
     routes,
 });
 
-router.beforeEach((to, from, next) => {
-    // Analytics-Aufruf vor Seitenwechsel
-    if (window.x5engine) {
-        window.x5engine.analytics.setPageView();
-    }
-    next();
-});
-
 export default router;
