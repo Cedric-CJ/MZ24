@@ -5,7 +5,7 @@ import vue from '@vitejs/plugin-vue'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: 'https://cedric-cj.github.io/MZ24/',
+  base: '/',
   plugins: [
     vue(),
   ],
