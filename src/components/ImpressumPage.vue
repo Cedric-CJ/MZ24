@@ -4,6 +4,7 @@
       <nav>
         <ul>
           <li><router-link to="/">Startseite</router-link></li>
+          <li><router-link to="/unternehmen">Über Uns</router-link></li>
           <li><router-link to="/galerie">Galerie</router-link></li>
           <li><router-link to="/leistungen">Leistungen</router-link></li>
           <li><router-link to="/impressum">Impressum</router-link></li>
@@ -22,11 +23,8 @@
             An der Staatsreserve 2<br>
             15517 Fürstenwalde/Spree<br>
             Tel: <a href="tel:+491634227950">0163 / 42 27 950</a><br>
-            E-Mail: <a href="mailto:info@mz24.net">info@mz24.net</a></p>
-        </div>
-        <div class="impressum-section">
-          <p><strong>Rechtsform:</strong></p>
-          <p>Einzelunternehmen</p>
+            E-Mail: <a href="mailto:info@mz24.net">info@mz24.net</a><br>
+            USt-IdNr: DE237823349</p>
         </div>
         <div class="impressum-section">
           <p><strong>Zuständige Behörde:</strong></p>
@@ -34,11 +32,8 @@
             Bahnhofstr. 12<br>
             15230 Frankfurt (Oder)<br>
             Tel: <a href="tel:+4933556190">0335 5619-0</a><br>
-            E-Mail: <a href="mailto:info@hwk-ff.de">info@hwk-ff.de</a></p>
-        </div>
-        <div class="impressum-section">
-          <p><strong>Umsatzsteuer-Identifikationsnummer:</strong></p>
-          <p>DE123456789</p>
+            E-Mail: <a href="mailto:info@hwk-ff.de">info@hwk-ff.de</a><br>
+            USt-IdNr: DE 270159353</p>
         </div>
       </div>
       <div class="legal-notes">
@@ -76,6 +71,10 @@
           </p>
         </div>
       </div>
+      <div class="footer-links">
+        <router-link to="/impressum">Impressum</router-link> |
+        <router-link to="/datenschutz">Datenschutz</router-link>
+      </div>
     </footer>
   </div>
 </template>
@@ -84,14 +83,6 @@
 export default {
   name: 'ImpressumPage'
 };
-window.addEventListener('scroll', () => {
-  const scrollButton = document.querySelector('.scroll-to-top');
-  if (window.scrollY > 300) {
-    scrollButton.style.display = 'block';
-  } else {
-    scrollButton.style.display = 'none';
-  }
-});
 </script>
 
 <style scoped>
@@ -118,7 +109,7 @@ header {
   align-items: center;
   width: 100%;
   padding: 10px;
-  background-color: #333;
+  background-color: #9f9b9b;
   color: white;
   flex-wrap: wrap;
 }
@@ -197,7 +188,7 @@ main:hover {
 
 footer {
   padding: 10px;
-  background-color: #333;
+  background-color: #9f9b9b;
   color: white;
   width: 100%;
   text-align: center;
@@ -228,14 +219,30 @@ footer {
 
 .footer-right p {
   text-align: left;
+  font-size: 0.9em;
 }
 
 .footer-right a {
-  color: #9f9b9b;
+  color: #ffffff;
   text-decoration: none;
 }
 
 .footer-right a:hover {
+  color: #f39c12;
+}
+
+.footer-links {
+  margin-top: 10px;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  margin: 0 5px;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
   color: #f39c12;
 }
 

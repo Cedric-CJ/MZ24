@@ -1,3 +1,75 @@
+<script setup>
+import { ref, onMounted } from 'vue';
+
+const firms = ref([
+  "AlterMann Heizungs- und Sanitär GmbH",
+  "Bad Saarow Kur GmbH",
+  "Bardenhagen Feinwerk Technik GmbH",
+  "Baukontor 2000",
+  "Becker & Armburst GmbH (FFO)",
+  "Becker & Armburst GmbH (Füwa)",
+  "Becker & Armburst GmbH (KW)",
+  "Beck & Armburst GmbH (LF)",
+  "Burisch Grundbau GmbH",
+  "Christin und Sascha Schelter Immobilien GbR",
+  "CURATA Senioreneinrichtungen GmbH",
+  "DB - Angebotsmangment",
+  "DB Service GmbH",
+  "Edalko GmbH",
+  "Engelmann Brunnenbau GmbH",
+  "Facility Management",
+  "FRÖBEL Bildung und Erziehung gemeinnützige GmbH",
+  "Glaserei Schwelgin",
+  "Grundstücksgemeinschaft Roswitha und Marie Frost GbR",
+  "Heider Logistik GmbH & Co. KG",
+  "Heimtiergarten Fürstenwalde",
+  "Kalusa Saaten GmbH",
+  "Last Hausverwaltung",
+  "Ludwig Lamprecht",
+  "Norbert Schmidt Hausverwaltung GmbH",
+  "Plickert Glasereibetriebe GmbH",
+  "Robert Helwig GmbH",
+  "Schliessanlagen Banser",
+  "Solaritec GmbH",
+  "SBAZV",
+  "Station und Service AG",
+  "Störitzland Betriebsgesellschaft mbH",
+  "Tarkus Gebäudemanagement GmbH",
+  "Tiefbau Werner GmbH",
+  "TÜV Nord Auto GmbH & Co.KG",
+  "Wohnungsbau und Siedlungsgesellschaft von 1924 mbH",
+  "Zeppelin Rental GmbH"
+]);
+
+firms.value.sort();
+
+const logos = ref({});
+const loading = ref({});
+
+const loadLogos = async () => {
+  for (const firm of firms.value) {
+    const logoName = firm.replace(/[^a-zA-Z0-9]/g, '_');
+    loading.value[firm] = true;
+    try {
+      const response = await fetch(`@/assets/logos/${logoName}.png`);
+      if (response.ok) {
+        logos.value[firm] = `@/assets/logos/${logoName}.png`;
+      } else {
+        logos.value[firm] = null;
+      }
+    } catch {
+      logos.value[firm] = null;
+    } finally {
+      loading.value[firm] = false;
+    }
+  }
+};
+
+onMounted(() => {
+  loadLogos();
+});
+</script>
+
 <template>
   <div class="container">
     <header>
@@ -12,10 +84,17 @@
       <img src="@/assets/Logo.gif" alt="Logo" class="logo">
     </header>
     <main>
-      <h1 class="fade-in">Willkommen bei</h1>
-      <h2 class="fade-in-delay">Metallbaumeister Zigann</h2>
-      <h3 class="fade-in">Unser Motto:</h3>
-      <h4 class="fade-in">Zufriedene Kunden sind unsere Basis,<br>hohe Fachkompetenz ist unsere Zukunft</h4>
+      <h1>Unsere Kunden</h1>
+      <div class="firms-list">
+        <div class="firm" v-for="firm in firms" :key="firm">
+          <span>{{ firm }}</span>
+          <div class="logo-container">
+            <img v-if="logos[firm]" :src="logos[firm]" alt="Logo" class="firm-logo">
+            <div v-else-if="loading[firm]" class="loader"></div>
+            <span v-else>Logo nicht gefunden</span>
+          </div>
+        </div>
+      </div>
     </main>
     <footer>
       <div class="footer-content">
@@ -35,17 +114,11 @@
       </div>
       <div class="footer-links">
         <router-link to="/impressum">Impressum</router-link> |
-        <router-link to="/privacy-policy">Datenschutz</router-link>
+        <router-link to="/datenschutz">Datenschutz</router-link>
       </div>
     </footer>
   </div>
 </template>
-
-<script>
-export default {
-  name: 'HomePage',
-};
-</script>
 
 <style scoped>
 html, body {
@@ -138,26 +211,57 @@ h1 {
   color: #333;
 }
 
-h2 {
-  font-size: 2em;
-  margin-top: 40px;
-  color: #444;
+.firms-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-h3 {
-  font-size: 1.5em;
-  margin-top: 20px;
-  color: #555;
+.firm {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  padding: 10px;
+  margin: 10px 0;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: transform 0.3s, background-color 0.3s;
 }
 
-h4 {
-  font-size: 1.2em;
-  color: #666;
+.firm:hover {
+  transform: translateY(-5px);
+  background-color: #f0f0f0;
 }
 
-p {
-  font-size: 1.2em;
-  color: #ffffff;
+.logo-container {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.firm-logo {
+  width: 100px;
+  height: auto;
+}
+
+.loader {
+  border: 4px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 4px solid #333;
+  width: 20px;
+  height: 20px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 footer {
@@ -166,6 +270,7 @@ footer {
   color: white;
   width: 100%;
   text-align: center;
+  border-radius: 10px;
 }
 
 .footer-content {
@@ -217,22 +322,6 @@ footer {
 
 .footer-links a:hover {
   color: #f39c12;
-}
-
-.fade-in {
-  opacity: 0;
-  animation: fadeIn 2s forwards;
-}
-
-.fade-in-delay {
-  opacity: 0;
-  animation: fadeIn 2s 1s forwards;
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
 }
 
 @media (max-width: 768px) {
@@ -309,7 +398,7 @@ footer {
   }
 
   .footer-left p, .footer-right p {
-    font-size: 0.8em;
+    font-size: 0.9em;
   }
 
   .footer-right p {

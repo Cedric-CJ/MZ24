@@ -4,9 +4,9 @@
       <nav>
         <ul>
           <li><router-link to="/">Startseite</router-link></li>
+          <li><router-link to="/unternehmen">Über Uns</router-link></li>
           <li><router-link to="/galerie">Galerie</router-link></li>
           <li><router-link to="/leistungen">Leistungen</router-link></li>
-          <li><router-link to="/impressum">Impressum</router-link></li>
         </ul>
       </nav>
       <img src="@/assets/Logo.gif" alt="Logo" class="logo">
@@ -60,6 +60,10 @@
           </p>
         </div>
       </div>
+      <div class="footer-links">
+        <router-link to="/impressum">Impressum</router-link> |
+        <router-link to="/datenschutz">Datenschutz</router-link>
+      </div>
     </footer>
   </div>
 </template>
@@ -94,7 +98,7 @@ header {
   align-items: center;
   width: 100%;
   padding: 10px;
-  background-color: #333;
+  background-color: #9f9b9b;
   color: white;
   flex-wrap: wrap;
 }
@@ -173,7 +177,7 @@ ul li ul {
 
 footer {
   padding: 10px;
-  background-color: #333;
+  background-color: #9f9b9b;
   color: white;
   width: 100%;
   text-align: center;
@@ -204,14 +208,30 @@ footer {
 
 .footer-right p {
   text-align: left;
+  font-size: 0.9em;
 }
 
 .footer-right a {
-  color: #9f9b9b;
+  color: #ffffff;
   text-decoration: none;
 }
 
 .footer-right a:hover {
+  color: #f39c12;
+}
+
+.footer-links {
+  margin-top: 10px;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  margin: 0 5px;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
   color: #f39c12;
 }
 

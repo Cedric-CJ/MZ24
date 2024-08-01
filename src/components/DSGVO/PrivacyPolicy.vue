@@ -1,0 +1,311 @@
+<template>
+  <div class="container">
+    <header>
+      <nav>
+        <ul>
+          <li><router-link to="/">Startseite</router-link></li>
+          <li><router-link to="/unternehmen">Über Uns</router-link></li>
+          <li><router-link to="/galerie">Galerie</router-link></li>
+          <li><router-link to="/leistungen">Leistungen</router-link></li>
+        </ul>
+      </nav>
+      <img src="@/assets/Logo.gif" alt="Logo" class="logo">
+    </header>
+    <main>
+      <h1>Datenschutzerklärung</h1>
+      <div class="content">
+        <p><strong>1. Datenschutz auf einen Blick</strong></p>
+        <p><strong>Allgemeine Hinweise</strong></p>
+        <p>Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können. Ausführliche Informationen zum Thema Datenschutz entnehmen Sie unserer unter diesem Text aufgeführten Datenschutzerklärung.</p>
+
+        <p><strong>Datenerfassung auf dieser Website</strong></p>
+        <p><strong>Wer ist verantwortlich für die Datenerfassung auf dieser Website?</strong></p>
+        <p>Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Dessen Kontaktdaten können Sie dem Abschnitt „Hinweis zur Verantwortlichen Stelle“ in dieser Datenschutzerklärung entnehmen.</p>
+
+        <p><strong>Wie erfassen wir Ihre Daten?</strong></p>
+        <p>Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese mitteilen. Hierbei kann es sich z. B. um Daten handeln, die Sie in einer E-Mail eingeben.</p>
+        <p>Andere Daten werden automatisch beim Besuch der Website durch die IT-Systeme von IONOS erfasst. Das sind vor allem technische Daten (z. B. Internetbrowser, Betriebssystem oder Uhrzeit des Seitenaufrufs). Die Erfassung dieser Daten erfolgt automatisch, sobald Sie diese Website betreten.</p>
+
+        <p><strong>Wofür nutzen wir Ihre Daten?</strong></p>
+        <p>Die Daten können zur Analyse Ihres Nutzerverhaltens verwendet werden.</p>
+
+        <p><strong>Welche Rechte haben Sie bezüglich Ihrer Daten bei IONOS?</strong></p>
+        <p>Nutzer haben jederzeit das Recht, unentgeltlich Auskunft über die Herkunft, Empfänger und Zweck ihrer bei IONOS gespeicherten personenbezogenen Daten zu erhalten. Sie haben außerdem das Recht, die Berichtigung oder Löschung dieser Daten zu verlangen. Wenn Nutzer eine Einwilligung zur Datenverarbeitung erteilt haben, können sie diese Einwilligung jederzeit für die Zukunft widerrufen. Zusätzlich haben sie das Recht, unter bestimmten Umständen die Einschränkung der Verarbeitung ihrer personenbezogenen Daten zu verlangen. Des Weiteren steht ihnen ein Beschwerderecht bei der zuständigen Aufsichtsbehörde zu.</p>
+
+        <p><strong>2. Hosting</strong></p>
+        <p><strong>Wir hosten die Inhalte unserer Website bei folgendem Anbieter:</strong></p>
+
+        <p><strong>IONOS</strong></p>
+        <p>Anbieter ist die IONOS SE, Elgendorfer Str. 57, 56410 Montabaur (nachfolgend IONOS). Wenn Sie unsere Website besuchen, erfasst IONOS verschiedene Logfiles inklusive Ihrer IP-Adressen. Details entnehmen Sie der Datenschutzerklärung von IONOS: <a href="https://www.ionos.de/terms-gtc/terms-privacy" target="_blank">https://www.ionos.de/terms-gtc/terms-privacy</a>.</p>
+        <p>Die Verwendung von IONOS erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO, da wir ein berechtigtes Interesse an einer möglichst zuverlässigen Darstellung unserer Website haben. Die Verarbeitung der Daten erfolgt ausschließlich durch IONOS und umfasst die Erhebung technischer Daten wie z. B. Internetbrowser, Betriebssystem oder Uhrzeit des Seitenaufrufs. Eine Einwilligung ist in diesem Zusammenhang nicht erforderlich, da wir selbst keine personenbezogenen Daten erheben oder speichern.</p>
+
+        <p><strong>3. Allgemeine Hinweise und Pflichtinformationen</strong></p>
+
+        <p><strong>Datenschutz</strong></p>
+        <p>Die Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir selbst erheben keine personenbezogenen Daten. Die Erfassung und Verarbeitung technischer Daten erfolgt ausschließlich durch unseren Hosting-Dienstleister IONOS und unterliegt den gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung.</p>
+        <p>Wenn Sie diese Website benutzen, werden verschiedene technische Daten automatisch durch IONOS erfasst. Diese technischen Daten umfassen Informationen wie Internetbrowser, Betriebssystem und die Uhrzeit des Seitenaufrufs. Personenbezogene Daten werden von uns nicht erhoben.</p>
+        <p>Wir weisen darauf hin, dass die Datenübertragung im Internet (z. B. bei der Kommunikation per E-Mail) Sicherheitslücken aufweisen kann. Ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht möglich.</p>
+
+        <p><strong>Hinweis zur verantwortlichen Stelle</strong></p>
+        <p>Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:</p>
+        <p>Metallbaumeister Zigann<br>
+          An der Staatsreserve 2<br>
+          15517 Fürstenwalde/Spree<br>
+          Telefon: +49 (0) 1634227950<br>
+          E-Mail: info@mz24.net</p>
+        <p>Verantwortliche Stelle ist die natürliche oder juristische Person, die allein oder gemeinsam mit anderen über die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten (z. B. Namen, E-Mail-Adressen o. Ä.) entscheidet.</p>
+
+        <p><strong>Speicherdauer</strong></p>
+        <p>Informationen zur Speicherdauer der von IONOS erfassten Daten finden Sie in der Datenschutzerklärung von IONOS: <a href="https://www.ionos.de/terms-gtc/terms-privacy" target="_blank">https://www.ionos.de/terms-gtc/terms-privacy</a>.</p>
+
+        <p><strong>Allgemeine Hinweise zu den Rechtsgrundlagen der Datenverarbeitung auf dieser Website</strong></p>
+        <p>Da wir keine Daten erheben, verarbeiten oder speichern, gelten für uns keine speziellen Rechtsgrundlagen der Datenverarbeitung.</p>
+
+        <p><strong>Empfänger von personenbezogenen Daten</strong></p>
+        <p>Wir geben keine personenbezogenen Daten weiter, da wir selbst keine solchen Daten erfassen oder speichern.</p>
+
+        <p><strong>Widerruf Ihrer Einwilligung zur Datenverarbeitung</strong></p>
+        <p>Da wir keine personenbezogenen Daten verarbeiten, ist ein Widerruf der Einwilligung nicht notwendig.</p>
+
+        <p><strong>Widerspruchsrecht gegen die Datenerhebung in besonderen Fällen sowie gegen Direktwerbung (Art. 21 DSGVO)</strong></p>
+        <p>Da wir keine personenbezogenen Daten verarbeiten, entfällt auch das Widerspruchsrecht gegen die Datenerhebung.</p>
+
+        <p><strong>Beschwerderecht bei der zuständigen Aufsichtsbehörde</strong></p>
+        <p>Im Falle von Verstößen gegen die DSGVO steht den Betroffenen ein Beschwerderecht bei einer Aufsichtsbehörde, insbesondere in dem Mitgliedstaat ihres gewöhnlichen Aufenthalts, ihres Arbeitsplatzes oder des Orts des mutmaßlichen Verstoßes zu. Das Beschwerderecht besteht unbeschadet anderweitiger verwaltungsrechtlicher oder gerichtlicher Rechtsbehelfe.</p>
+
+        <p><strong>Recht auf Datenübertragbarkeit</strong></p>
+        <p>Da wir keine personenbezogenen Daten erfassen oder speichern, besteht kein Recht auf Datenübertragbarkeit.</p>
+
+        <p><strong>Auskunft, Berichtigung und Löschung</strong></p>
+        <p>Da wir keine personenbezogenen Daten erfassen oder speichern, besteht kein Recht auf Auskunft, Berichtigung oder Löschung durch uns.</p>
+
+        <p><strong>Recht auf Einschränkung der Verarbeitung</strong></p>
+        <p>Da wir keine personenbezogenen Daten erfassen oder speichern, besteht kein Recht auf Einschränkung der Verarbeitung.</p>
+
+        <p>Diese Datenschutzerklärung wurde erstellt und angepasst durch e-recht24.de.</p>
+      </div>
+    </main>
+    <footer>
+      <div class="footer-content">
+        <div class="footer-left">
+          <p>Schnell - Zuverlässig - Günstig<br>Einmalig in Deutschland</p>
+        </div>
+        <div class="footer-right">
+          <p>
+            Kontakt:<br>
+            Metallbaumeister Zigann<br>
+            An der Staatsreserve 2<br>
+            15517 Fürstenwalde/Spree<br>
+            <a href="tel:+491634227950">Tel: 0163 / 42 27 950</a><br>
+            <a href="mailto:info@mz24.net">info@mz24.net</a>
+          </p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <router-link to="/impressum">Impressum</router-link> |
+        <router-link to="/datenschutz">Datenschutz</router-link>
+      </div>
+    </footer>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'PrivacyPolicy'
+};
+</script>
+
+<style scoped>
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  padding: 0;
+  width: 100%;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  background-color: #9f9b9b;
+  color: white;
+  flex-wrap: wrap;
+}
+
+header .logo {
+  width: 150px;
+  height: auto;
+  border-radius: 15px;
+  margin-left: 20px;
+}
+
+header nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+header nav ul li {
+  margin: 0 10px;
+}
+
+header nav ul li a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s, transform 0.2s;
+}
+
+header nav ul li a:hover {
+  color: #f39c12;
+}
+
+header nav ul li a:active {
+  transform: scale(0.95);
+}
+
+main {
+  text-align: left;
+  margin: 20px 0;
+  flex-grow: 1;
+  width: 100%;
+  padding: 10px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+main:hover {
+  transform: translateY(-10px);
+  background-color: #e5e5e5;
+}
+
+h1 {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  color: #000000;
+}
+
+p {
+  font-size: 1.2em;
+  color: #000000;
+}
+
+footer {
+  padding: 10px;
+  background-color: #9f9b9b;
+  color: white;
+  width: 100%;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.footer-left p{
+  color: #ffffff;
+}
+
+.footer-right {
+  width: 45%;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-right p {
+  text-align: left;
+  font-size: 0.9em;
+  color: #ffffff;
+}
+
+.footer-right a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footer-right a:hover {
+  color: #f39c12;
+}
+
+.footer-links {
+  margin-top: 10px;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  margin: 0 5px;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #f39c12;
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+  }
+
+  header .logo {
+    margin-top: 10px;
+    margin-left: 0;
+  }
+
+  header nav ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-left, .footer-right {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .footer-right p {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  header nav ul li {
+    margin: 5px;
+  }
+
+  .footer-right p {
+    text-align: center;
+  }
+}
+</style>

@@ -4,9 +4,9 @@
       <nav>
         <ul>
           <li><router-link to="/">Startseite</router-link></li>
+          <li><router-link to="/unternehmen">Über Uns</router-link></li>
           <li><router-link to="/galerie">Galerie</router-link></li>
           <li><router-link to="/leistungen">Leistungen</router-link></li>
-          <li><router-link to="/impressum">Impressum</router-link></li>
         </ul>
       </nav>
       <img src="@/assets/Logo.gif" alt="Logo" class="logo">
@@ -19,7 +19,7 @@
           <div class="gallery-row">
             <button
                 class="nav-arrow prev"
-                v-if="images[categoryName].length > 3"
+                v-if="shouldShowArrows(categoryName)"
                 @click="prevImage(categoryName)"
             >
               &#10094;
@@ -39,7 +39,7 @@
             </div>
             <button
                 class="nav-arrow next"
-                v-if="images[categoryName].length > 3"
+                v-if="shouldShowArrows(categoryName)"
                 @click="nextImage(categoryName)"
             >
               &#10095;
@@ -56,21 +56,22 @@
     <footer>
       <div class="footer-content">
         <div class="footer-left">
-          <p>
-            Schnell - Zuverlässig - Günstig<br />
-            Einmalig in Deutschland
-          </p>
+          <p>Schnell - Zuverlässig - Günstig<br>Einmalig in Deutschland</p>
         </div>
         <div class="footer-right">
           <p>
-            Kontakt:<br />
-            Metallbaumeister Zigann<br />
-            An der Staatsreserve 2<br />
-            15517 Fürstenwalde/Spree<br />
-            <a href="tel:+491634227950">Tel: 0163 / 42 27 950</a><br />
+            Kontakt:<br>
+            Metallbaumeister Zigann<br>
+            An der Staatsreserve 2<br>
+            15517 Fürstenwalde/Spree<br>
+            <a href="tel:+491634227950">Tel: 0163 / 42 27 950</a><br>
             <a href="mailto:info@mz24.net">info@mz24.net</a>
           </p>
         </div>
+      </div>
+      <div class="footer-links">
+        <router-link to="/impressum">Impressum</router-link> |
+        <router-link to="/datenschutz">Datenschutz</router-link>
       </div>
     </footer>
   </div>
@@ -149,27 +150,29 @@ export default {
   methods: {
     getVisibleImages(category) {
       const images = this.images[category];
-      if (images.length <= 3) return images;
+      const maxImages = window.innerWidth <= 768 ? 2 : 4;
+      if (images.length <= maxImages) return images;
 
       const start = this.currentIndex[category];
-      const end = start + 3;
+      const end = start + maxImages;
       if (end <= images.length) return images.slice(start, end);
 
       return [...images.slice(start), ...images.slice(0, end - images.length)];
     },
     nextImage(category) {
+      const maxImages = window.innerWidth <= 768 ? 2 : 4;
       if (category === 'all') {
         this.currentImageIndex = (this.currentImageIndex + 1) % this.allImages.length;
       } else {
-        this.currentIndex[category] = (this.currentIndex[category] + 1) % this.images[category].length;
+        this.currentIndex[category] = (this.currentIndex[category] + maxImages) % this.images[category].length;
       }
     },
     prevImage(category) {
+      const maxImages = window.innerWidth <= 768 ? 2 : 4;
       if (category === 'all') {
         this.currentImageIndex = (this.currentImageIndex - 1 + this.allImages.length) % this.allImages.length;
       } else {
-        this.currentIndex[category] =
-            (this.currentIndex[category] - 1 + this.images[category].length) % this.images[category].length;
+        this.currentIndex[category] = (this.currentIndex[category] - maxImages + this.images[category].length) % this.images[category].length;
       }
     },
     openLightbox(category, index) {
@@ -189,7 +192,16 @@ export default {
     handleKeydown(event) {
       if (event.key === 'Escape') {
         this.closeLightbox();
+      } else if (event.key === 'ArrowRight') {
+        this.nextImage('all');
+      } else if (event.key === 'ArrowLeft') {
+        this.prevImage('all');
       }
+    },
+    shouldShowArrows(category) {
+      return window.innerWidth <= 768
+          ? this.images[category].length > 2
+          : this.images[category].length > 4;
     }
   }
 };
@@ -220,7 +232,7 @@ header {
   align-items: center;
   width: 100%;
   padding: 10px;
-  background-color: #333;
+  background-color: #9f9b9b;
   color: white;
   flex-wrap: wrap;
 }
@@ -300,7 +312,7 @@ main {
 
 .gallery-item {
   flex-shrink: 0;
-  width: calc(33.33% - 20px);
+  width: calc(25% - 20px);
   margin: 0 10px;
   position: relative;
 }
@@ -322,7 +334,7 @@ main {
   background: none;
   border: none;
   font-size: 3em;
-  color: white;
+  color: #000000;
   cursor: pointer;
   user-select: none;
   position: absolute;
@@ -362,7 +374,7 @@ main {
 .next {
   position: absolute;
   top: 50%;
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0);
   border: none;
   padding: 10px;
   cursor: pointer;
@@ -384,7 +396,7 @@ main {
 
 footer {
   padding: 10px;
-  background-color: #333;
+  background-color: #9f9b9b;
   color: white;
   width: 100%;
   text-align: center;
@@ -415,14 +427,30 @@ footer {
 
 .footer-right p {
   text-align: left;
+  font-size: 0.9em;
 }
 
 .footer-right a {
-  color: #9f9b9b;
+  color: #ffffff;
   text-decoration: none;
 }
 
 .footer-right a:hover {
+  color: #f39c12;
+}
+
+.footer-links {
+  margin-top: 10px;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  margin: 0 5px;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
   color: #f39c12;
 }
 
