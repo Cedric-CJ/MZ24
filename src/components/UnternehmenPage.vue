@@ -31,6 +31,8 @@ import TiefbauWerner from "@/Bilder/Logo/Tiefbau Werner GmbH.png";
 import TÜVNordAuto from "@/Bilder/Logo/TÜV Nord Auto GmbH & Co.KG.svg";
 import Wohnungsbau1924 from "@/Bilder/Logo/Wohnungsbau und Siedlungsgesellschaft von 1924 mbH.png";
 import ZeppelinRental from "@/Bilder/Logo/Zeppelin Rental GmbH.svg";
+import Meisterbrief from "@/Bilder/Meisterbrief.jpg";
+import DBVKZertifikat from "@/Bilder/DB-VK-Zertifikat.jpg";
 
 const firms = ref([
   { name: "AlterMann Heizungs- und Sanitär GmbH", logo: AlterMann },
@@ -116,8 +118,8 @@ onMounted(() => {
         </div>
       </div>
       <div class="certificates">
-        <img src="@/Bilder/Meisterbrief.jpg" alt="Meisterbrief" class="certificate" @click="showFullScreen('./src/Bilder/Meisterbrief.jpg')">
-        <img src="@/Bilder/DB-VK-Zertifikat.jpg" alt="DB-VK-Zertifikat" class="certificate" @click="showFullScreen('./src/Bilder/DB-VK-Zertifikat.jpg')">
+        <img src="@/Bilder/Meisterbrief.jpg" alt="Meisterbrief" class="certificate" @click="showFullScreen(Meisterbrief)">
+        <img src="@/Bilder/DB-VK-Zertifikat.jpg" alt="DB-VK-Zertifikat" class="certificate" @click="showFullScreen(DBVKZertifikat)">
       </div>
     </main>
     <footer>
