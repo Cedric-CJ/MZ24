@@ -2,39 +2,69 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 
+import AlterMann from "@/Bilder/Logo/AlterMann Heizungs- und Sanitär GmbH.svg";
+import BadSaarowKur from "@/Bilder/Logo/Bad Saarow Kur GmbH.png";
+import Bardenhagen from "@/Bilder/Logo/Bardenhagen Feinwerk Technik GmbH.png";
+import Baukontor2000 from "@/Bilder/Logo/Bau kontor 2000 Berlin GmbH.png";
+import BeckerArmburst from "@/Bilder/Logo/Becker & Armburst GmbH.svg";
+import BurischGrundbau from "@/Bilder/Logo/Burisch Grundbau GmbH.png";
+import CURATA from "@/Bilder/Logo/CURATA Senioreneinrichtungen GmbH.png";
+import DBAngebotsmangment from "@/Bilder/Logo/DB - Angebotsmangment und Service GmbH.png";
+import Edalko from "@/Bilder/Logo/Edalko GmbH.png";
+import EngelmannBrunnenbau from "@/Bilder/Logo/Engelmann Brunnenbau GmbH.png";
+import FacilityManagement from "@/Bilder/Logo/Facility Management.png";
+import FroebelBildung from "@/Bilder/Logo/FRÖBEL Bildung und Erziehung gemeinnützige GmbH.png";
+import GlasereiSchwelgin from "@/Bilder/Logo/Glaserei Schwelgin.jpg";
+import Grundstücksgemeinschaft from "@/Bilder/Logo/Grundstücksgemeinschaft Roswitha und Marie Frost GbR.png";
+import HeiderLogistik from "@/Bilder/Logo/Heider Logistik GmbH & Co. KG.png";
+import Heimtiergarten from "@/Bilder/Logo/Heimtiergarten Fürstenwalde.svg";
+import KalusaSaaten from "@/Bilder/Logo/Kalusa Saaten GmbH.png";
+import LudwigLamprecht from "@/Bilder/Logo/Ludwig Lamprecht.jpg";
+import NorbertSchmidt from "@/Bilder/Logo/Norbert Schmidt Hausverwaltung GmbH.png";
+import PlickertGlaserei from "@/Bilder/Logo/Plickert Glasereibetriebe GmbH.webp";
+import RobertHelwig from "@/Bilder/Logo/Robert Helwig GmbH.png";
+import SchliessanlagenBanser from "@/Bilder/Logo/Schliessanlagen Banser.jpg";
+import Solaritec from "@/Bilder/Logo/Solaritec GmbH.svg";
+import SBAZV from "@/Bilder/Logo/SBAZV.svg";
+import Stoeritzland from "@/Bilder/Logo/Störitzland Betriebsgesellschaft mbH.avif";
+import TiefbauWerner from "@/Bilder/Logo/Tiefbau Werner GmbH.png";
+import TÜVNordAuto from "@/Bilder/Logo/TÜV Nord Auto GmbH & Co.KG.svg";
+import Wohnungsbau1924 from "@/Bilder/Logo/Wohnungsbau und Siedlungsgesellschaft von 1924 mbH.png";
+import ZeppelinRental from "@/Bilder/Logo/Zeppelin Rental GmbH.svg";
+
 const firms = ref([
-  { name: "AlterMann Heizungs- und Sanitär GmbH", logo: "./src/Logos/AlterMann Heizungs- und Sanitär GmbH.svg" },
-  { name: "Bad Saarow Kur GmbH", logo: "./src/Logos/Bad Saarow Kur GmbH.png" },
-  { name: "Bardenhagen Feinwerk Technik GmbH", logo: "./src/Logos/Bardenhagen Feinwerk Technik GmbH.png" },
-  { name: "Baukontor 2000", logo: "./src/Logos/Bau kontor 2000 Berlin GmbH.png" },
-  { name: "Becker & Armburst GmbH", logo: "./src/Logos/Becker & Armburst GmbH.svg" },
-  { name: "Burisch Grundbau GmbH", logo: "./src/Logos/Burisch Grundbau GmbH.png" },
+  { name: "AlterMann Heizungs- und Sanitär GmbH", logo: AlterMann },
+  { name: "Bad Saarow Kur GmbH", logo: BadSaarowKur },
+  { name: "Bardenhagen Feinwerk Technik GmbH", logo: Bardenhagen },
+  { name: "Baukontor 2000", logo: Baukontor2000 },
+  { name: "Becker & Armburst GmbH", logo: BeckerArmburst },
+  { name: "Burisch Grundbau GmbH", logo: BurischGrundbau },
   { name: "Christin und Sascha Schelter Immobilien GbR" },
-  { name: "CURATA Senioreneinrichtungen GmbH", logo: "./src/Logos/CURATA Senioreneinrichtungen GmbH.png" },
-  { name: "DB - Angebotsmangment und Service GmbH", logo: "./src/Logos/DB - Angebotsmangment und Service GmbH.png" },
-  { name: "Edalko GmbH", logo: "./src/Logos/Edalko GmbH.png" },
-  { name: "Engelmann Brunnenbau GmbH", logo: "./src/Logos/Engelmann Brunnenbau GmbH.png" },
-  { name: "Facility Management", logo: "./src/Logos/Facility Management.png" },
-  { name: "FRÖBEL Bildung und Erziehung gemeinnützige GmbH", logo: "./src/Logos/FRÖBEL Bildung und Erziehung gemeinnützige GmbH.png" },
-  { name: "Glaserei Schwelgin", logo: "./src/Logos/Glaserei Schwelgin.jpg" },
-  { name: "Grundstücksgemeinschaft Roswitha und Marie Frost GbR", logo: "./src/Logos/Grundstücksgemeinschaft Roswitha und Marie Frost GbR.png" },
-  { name: "Heider Logistik GmbH & Co. KG", logo: "./src/Logos/Heider Logistik GmbH & Co. KG.png" },
-  { name: "Heimtiergarten Fürstenwalde", logo: "./src/Logos/Heimtiergarten Fürstenwalde.svg" },
-  { name: "Kalusa Saaten GmbH", logo: "./src/Logos/Kalusa Saaten GmbH.png" },
+  { name: "CURATA Senioreneinrichtungen GmbH", logo: CURATA },
+  { name: "DB - Angebotsmangment und Service GmbH", logo: DBAngebotsmangment },
+  { name: "Edalko GmbH", logo: Edalko },
+  { name: "Engelmann Brunnenbau GmbH", logo: EngelmannBrunnenbau },
+  { name: "Facility Management", logo: FacilityManagement },
+  { name: "FRÖBEL Bildung und Erziehung gemeinnützige GmbH", logo: FroebelBildung },
+  { name: "Glaserei Schwelgin", logo: GlasereiSchwelgin },
+  { name: "Grundstücksgemeinschaft Roswitha und Marie Frost GbR", logo: Grundstücksgemeinschaft },
+  { name: "Heider Logistik GmbH & Co. KG", logo: HeiderLogistik },
+  { name: "Heimtiergarten Fürstenwalde", logo: Heimtiergarten },
+  { name: "Kalusa Saaten GmbH", logo: KalusaSaaten },
   { name: "Last Hausverwaltung" },
-  { name: "Ludwig Lamprecht", logo: "./src/Logos/Ludwig Lamprecht.jpg" },
-  { name: "Norbert Schmidt Hausverwaltung GmbH", logo: "./src/Logos/Norbert Schmidt Hausverwaltung GmbH.png" },
-  { name: "Plickert Glasereibetriebe GmbH", logo: "./src/Logos/Plickert Glasereibetriebe GmbH.webp" },
-  { name: "Robert Helwig GmbH", logo: "./src/Logos/Robert Helwig GmbH.png" },
-  { name: "Schliessanlagen Banser", logo: "./src/Logos/Schliessanlagen Banser.jpg" },
-  { name: "Solaritec GmbH", logo: "./src/Logos/Solaritec GmbH.svg" },
-  { name: "SBAZV", logo: "./src/Logos/SBAZV.svg" },
-  { name: "Störitzland Betriebsgesellschaft mbH", logo: "./src/Logos/Störitzland Betriebsgesellschaft mbH.avif" },
+  { name: "Ludwig Lamprecht", logo: LudwigLamprecht },
+  { name: "Norbert Schmidt Hausverwaltung GmbH", logo: NorbertSchmidt },
+  { name: "Plickert Glasereibetriebe GmbH", logo: PlickertGlaserei },
+  { name: "Robert Helwig GmbH", logo: RobertHelwig },
+  { name: "Schliessanlagen Banser", logo: SchliessanlagenBanser },
+  { name: "Solaritec GmbH", logo: Solaritec },
+  { name: "SBAZV", logo: SBAZV },
+  { name: "Störitzland Betriebsgesellschaft mbH", logo: Stoeritzland },
   { name: "Tarkus Gebäudemanagement GmbH" },
-  { name: "Tiefbau Werner GmbH", logo: "./src/Logos//Tiefbau Werner GmbH.png" },
-  { name: "TÜV Nord Auto GmbH & Co.KG", logo: "./src/Logos/TÜV Nord Auto GmbH & Co.KG.svg" },
-  { name: "Wohnungsbau und Siedlungsgesellschaft von 1924 mbH", logo: "./src/Logos/Wohnungsbau und Siedlungsgesellschaft von 1924 mbH.png" },
-  { name: "Zeppelin Rental GmbH", logo: "./src/Logos/Zeppelin Rental GmbH.svg" }
+  { name: "Tiefbau Werner GmbH", logo: TiefbauWerner },
+  { name: "TÜV Nord Auto GmbH & Co.KG", logo: TÜVNordAuto },
+  { name: "Wohnungsbau und Siedlungsgesellschaft von 1924 mbH", logo: Wohnungsbau1924 },
+  { name: "Zeppelin Rental GmbH", logo: ZeppelinRental }
 ]);
 
 firms.value.sort((a, b) => a.name.localeCompare(b.name));
