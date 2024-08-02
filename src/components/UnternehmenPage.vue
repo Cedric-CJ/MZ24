@@ -2,72 +2,62 @@
 import { ref, onMounted } from 'vue';
 
 const firms = ref([
-  "AlterMann Heizungs- und Sanitär GmbH",
-  "Bad Saarow Kur GmbH",
-  "Bardenhagen Feinwerk Technik GmbH",
-  "Baukontor 2000",
-  "Becker & Armburst GmbH (FFO)",
-  "Becker & Armburst GmbH (Füwa)",
-  "Becker & Armburst GmbH (KW)",
-  "Beck & Armburst GmbH (LF)",
-  "Burisch Grundbau GmbH",
-  "Christin und Sascha Schelter Immobilien GbR",
-  "CURATA Senioreneinrichtungen GmbH",
-  "DB - Angebotsmangment",
-  "DB Service GmbH",
-  "Edalko GmbH",
-  "Engelmann Brunnenbau GmbH",
-  "Facility Management",
-  "FRÖBEL Bildung und Erziehung gemeinnützige GmbH",
-  "Glaserei Schwelgin",
-  "Grundstücksgemeinschaft Roswitha und Marie Frost GbR",
-  "Heider Logistik GmbH & Co. KG",
-  "Heimtiergarten Fürstenwalde",
-  "Kalusa Saaten GmbH",
-  "Last Hausverwaltung",
-  "Ludwig Lamprecht",
-  "Norbert Schmidt Hausverwaltung GmbH",
-  "Plickert Glasereibetriebe GmbH",
-  "Robert Helwig GmbH",
-  "Schliessanlagen Banser",
-  "Solaritec GmbH",
-  "SBAZV",
-  "Station und Service AG",
-  "Störitzland Betriebsgesellschaft mbH",
-  "Tarkus Gebäudemanagement GmbH",
-  "Tiefbau Werner GmbH",
-  "TÜV Nord Auto GmbH & Co.KG",
-  "Wohnungsbau und Siedlungsgesellschaft von 1924 mbH",
-  "Zeppelin Rental GmbH"
+  { name: "AlterMann Heizungs- und Sanitär GmbH", logo: "./src/assets/logos/AlterMann Heizungs- und Sanitär GmbH.svg" },
+  { name: "Bad Saarow Kur GmbH", logo: "./src/assets/logos/Bad Saarow Kur GmbH.png" },
+  { name: "Bardenhagen Feinwerk Technik GmbH", logo: "./src/assets/logos/Bardenhagen Feinwerk Technik GmbH.png" },
+  { name: "Baukontor 2000", logo: "./src/assets/logos/Bau kontor 2000 Berlin GmbH.png" },
+  { name: "Becker & Armburst GmbH", logo: "./src/assets/logos/Becker & Armburst GmbH.svg" },
+  { name: "Burisch Grundbau GmbH", logo: "./src/assets/logos/Burisch Grundbau GmbH.png" },
+  { name: "Christin und Sascha Schelter Immobilien GbR" },
+  { name: "CURATA Senioreneinrichtungen GmbH", logo: "./src/assets/logos/CURATA Senioreneinrichtungen GmbH.png" },
+  { name: "DB - Angebotsmangment und Service GmbH", logo: "./src/assets/logos/DB - Angebotsmangment und Service GmbH.png" },
+  { name: "Edalko GmbH", logo: "./src/assets/logos/Edalko GmbH.png" },
+  { name: "Engelmann Brunnenbau GmbH", logo: "./src/assets/logos/Engelmann Brunnenbau GmbH.png" },
+  { name: "Facility Management", logo: "./src/assets/logos/Facility Management.png" },
+  { name: "FRÖBEL Bildung und Erziehung gemeinnützige GmbH", logo: "./src/assets/logos/FRÖBEL Bildung und Erziehung gemeinnützige GmbH.png" },
+  { name: "Glaserei Schwelgin", logo: "./src/assets/logos/Glaserei Schwelgin.jpg" },
+  { name: "Grundstücksgemeinschaft Roswitha und Marie Frost GbR", logo: "./src/assets/logos/Grundstücksgemeinschaft Roswitha und Marie Frost GbR.png" },
+  { name: "Heider Logistik GmbH & Co. KG", logo: "./src/assets/logos/Heider Logistik GmbH & Co. KG.png" },
+  { name: "Heimtiergarten Fürstenwalde", logo: "./src/assets/logos/Heimtiergarten Fürstenwalde.svg" },
+  { name: "Kalusa Saaten GmbH", logo: "./src/assets/logos/Kalusa Saaten GmbH.png" },
+  { name: "Last Hausverwaltung" },
+  { name: "Ludwig Lamprecht", logo: "./src/assets/logos/Ludwig Lamprecht.jpg" },
+  { name: "Norbert Schmidt Hausverwaltung GmbH", logo: "./src/assets/logos/Norbert Schmidt Hausverwaltung GmbH.png" },
+  { name: "Plickert Glasereibetriebe GmbH", logo: "./src/assets/logos/Plickert Glasereibetriebe GmbH.webp" },
+  { name: "Robert Helwig GmbH", logo: "./src/assets/logos/Robert Helwig GmbH.png" },
+  { name: "Schliessanlagen Banser", logo: "./src/assets/logos/Schliessanlagen Banser.jpg" },
+  { name: "Solaritec GmbH", logo: "./src/assets/logos/Solaritec GmbH.svg" },
+  { name: "SBAZV", logo: "./src/assets/logos/SBAZV.svg" },
+  { name: "Störitzland Betriebsgesellschaft mbH", logo: "./src/assets/logos/Störitzland Betriebsgesellschaft mbH.avif" },
+  { name: "Tarkus Gebäudemanagement GmbH" },
+  { name: "Tiefbau Werner GmbH", logo: "./src/assets/logos/Tiefbau Werner GmbH.png" },
+  { name: "TÜV Nord Auto GmbH & Co.KG", logo: "./src/assets/logos/TÜV Nord Auto GmbH & Co.KG.svg" },
+  { name: "Wohnungsbau und Siedlungsgesellschaft von 1924 mbH", logo: "./src/assets/logos/Wohnungsbau und Siedlungsgesellschaft von 1924 mbH.png" },
+  { name: "Zeppelin Rental GmbH", logo: "./src/assets/logos/Zeppelin Rental GmbH.svg" }
 ]);
 
-firms.value.sort();
+firms.value.sort((a, b) => a.name.localeCompare(b.name));
 
-const logos = ref({});
-const loading = ref({});
+const fullScreenImage = ref(null);
 
-const loadLogos = async () => {
-  for (const firm of firms.value) {
-    const logoName = firm.replace(/[^a-zA-Z0-9]/g, '_');
-    loading.value[firm] = true;
-    try {
-      const response = await fetch(`@/assets/logos/${logoName}.png`);
-      if (response.ok) {
-        logos.value[firm] = `@/assets/logos/${logoName}.png`;
-      } else {
-        logos.value[firm] = null;
-      }
-    } catch {
-      logos.value[firm] = null;
-    } finally {
-      loading.value[firm] = false;
-    }
+const showFullScreen = (src) => {
+  fullScreenImage.value = src;
+};
+
+const hideFullScreen = () => {
+  fullScreenImage.value = null;
+};
+
+const handleEscapeKey = (event) => {
+  if (event.key === 'Escape') {
+    hideFullScreen();
   }
 };
 
 onMounted(() => {
-  loadLogos();
+  window.addEventListener('keyup', handleEscapeKey);
 });
+
 </script>
 
 <template>
@@ -86,14 +76,17 @@ onMounted(() => {
     <main>
       <h1>Unsere Kunden</h1>
       <div class="firms-list">
-        <div class="firm" v-for="firm in firms" :key="firm">
-          <span>{{ firm }}</span>
+        <div class="firm" v-for="firm in firms" :key="firm.name">
+          <span>{{ firm.name }}</span>
           <div class="logo-container">
-            <img v-if="logos[firm]" :src="logos[firm]" alt="Logo" class="firm-logo">
-            <div v-else-if="loading[firm]" class="loader"></div>
+            <img v-if="firm.logo" :src="firm.logo" alt="Logo" class="firm-logo" @click="showFullScreen(firm.logo)">
             <span v-else>Logo nicht gefunden</span>
           </div>
         </div>
+      </div>
+      <div class="certificates">
+        <img src="@/Bilder/Meisterbrief.jpg" alt="Meisterbrief" class="certificate" @click="showFullScreen('./src/Bilder/Meisterbrief.jpg')">
+        <img src="@/Bilder/DB-VK-Zertifikat.jpg" alt="DB-VK-Zertifikat" class="certificate" @click="showFullScreen('./src/Bilder/DB-VK-Zertifikat.jpg')">
       </div>
     </main>
     <footer>
@@ -113,10 +106,14 @@ onMounted(() => {
         </div>
       </div>
       <div class="footer-links">
-        <router-link to="/impressum">Impressum</router-link> |
+        <router-link to="/impressum">Impressum</router-link>
+        |
         <router-link to="/datenschutz">Datenschutz</router-link>
       </div>
     </footer>
+    <div v-if="fullScreenImage" class="fullscreen-overlay" @click="hideFullScreen">
+      <img :src="fullScreenImage" class="fullscreen-image">
+    </div>
   </div>
 </template>
 
@@ -194,15 +191,9 @@ main {
   flex-grow: 1;
   width: 100%;
   padding: 10px;
-  background-color: #f5f5f5;
+  background-color: #e0e0e0; /* Dunkler Hintergrund */
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
-}
-
-main:hover {
-  transform: translateY(-10px);
-  background-color: #e5e5e5;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
@@ -224,16 +215,15 @@ h1 {
   width: 80%;
   padding: 10px;
   margin: 10px 0;
-  background-color: #fff;
-  border: 1px solid #ddd;
+  background-color: #d0d0d0; /* Etwas dunklerer Hintergrund */
+  border: 1px solid #ccc;
   border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s, background-color 0.3s;
 }
 
 .firm:hover {
-  transform: translateY(-5px);
-  background-color: #f0f0f0;
+  background-color: #c0c0c0; /* Hintergrundfarbe bei Hover */
 }
 
 .logo-container {
@@ -246,8 +236,9 @@ h1 {
 }
 
 .firm-logo {
-  width: 100px;
+  width: 100%;
   height: auto;
+  cursor: pointer;
 }
 
 .loader {
@@ -259,9 +250,27 @@ h1 {
   animation: spin 2s linear infinite;
 }
 
+.certificates {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.certificate {
+  width: 150px;
+  margin: 0 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 footer {
@@ -322,6 +331,24 @@ footer {
 
 .footer-links a:hover {
   color: #f39c12;
+}
+
+.fullscreen-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.fullscreen-image {
+  max-width: 90%;
+  max-height: 90%;
 }
 
 @media (max-width: 768px) {
