@@ -53,7 +53,6 @@ const firms = ref([
   { name: "Heider Logistik GmbH & Co. KG", logo: HeiderLogistik },
   { name: "Heimtiergarten Fürstenwalde", logo: Heimtiergarten },
   { name: "Kalusa Saaten GmbH", logo: KalusaSaaten },
-  { name: "Last Hausverwaltung" },
   { name: "Ludwig Lamprecht", logo: LudwigLamprecht },
   { name: "Norbert Schmidt Hausverwaltung GmbH", logo: NorbertSchmidt },
   { name: "Plickert Glasereibetriebe GmbH", logo: PlickertGlaserei },
@@ -62,7 +61,6 @@ const firms = ref([
   { name: "Solaritec GmbH", logo: Solaritec },
   { name: "SBAZV", logo: SBAZV },
   { name: "Störitzland Betriebsgesellschaft mbH", logo: Stoeritzland },
-  { name: "Tarkus Gebäudemanagement GmbH" },
   { name: "Tiefbau Werner GmbH", logo: TiefbauWerner },
   { name: "TÜV Nord Auto GmbH & Co.KG", logo: TÜVNordAuto },
   { name: "Wohnungsbau und Siedlungsgesellschaft von 1924 mbH", logo: Wohnungsbau1924 },
@@ -90,7 +88,6 @@ const handleEscapeKey = (event) => {
 onMounted(() => {
   window.addEventListener('keyup', handleEscapeKey);
 });
-
 </script>
 
 <template>
@@ -224,7 +221,7 @@ main {
   flex-grow: 1;
   width: 100%;
   padding: 10px;
-  background-color: #e0e0e0; /* Dunkler Hintergrund */
+  background-color: #e0e0e0;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -237,18 +234,20 @@ h1 {
 
 .firms-list {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
 }
 
 .firm {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  width: 80%;
+  width: calc(25% - 10px);
+  min-width: 200px;
   padding: 10px;
-  margin: 10px 0;
-  background-color: #d0d0d0; /* Etwas dunklerer Hintergrund */
+  background-color: #d0d0d0;
   border: 1px solid #ccc;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -256,7 +255,7 @@ h1 {
 }
 
 .firm:hover {
-  background-color: #c0c0c0; /* Hintergrundfarbe bei Hover */
+  background-color: #c0c0c0;
 }
 
 .logo-container {
@@ -269,8 +268,9 @@ h1 {
 }
 
 .firm-logo {
-  width: 100%;
-  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
   cursor: pointer;
 }
 
@@ -384,7 +384,17 @@ footer {
   max-height: 90%;
 }
 
+@media (max-width: 1024px) {
+  .firm {
+    width: calc(33.33% - 10px);
+  }
+}
+
 @media (max-width: 768px) {
+  .firm {
+    width: calc(50% - 10px);
+  }
+
   header {
     flex-direction: column;
   }
@@ -433,6 +443,10 @@ footer {
 }
 
 @media (max-width: 480px) {
+  .firm {
+    width: calc(100% - 10px);
+  }
+
   header nav ul li {
     margin: 5px;
   }

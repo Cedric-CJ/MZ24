@@ -50,9 +50,9 @@ export default {
 .back-to-top {
   position: fixed;
   bottom: 20px;
-  right: 20px;
-  width: 50px;
-  height: 50px;
+  right: 10px;
+  width: 10vh;
+  height: 5vh;
   cursor: pointer;
   opacity: 0.7;
   transition: opacity 0.3s;
