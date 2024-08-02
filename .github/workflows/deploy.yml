@@ -20,8 +20,6 @@ jobs:
 
       - name: Build 🏗️
         run: npm run build
-        env:
-          NODE_ENV: production
 
       - name: Deploy to GH Pages 🚀
         if: ${{ github.event_name != 'pull_request' }}
