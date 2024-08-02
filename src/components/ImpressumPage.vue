@@ -7,7 +7,6 @@
           <li><router-link to="/unternehmen">Über Uns</router-link></li>
           <li><router-link to="/galerie">Galerie</router-link></li>
           <li><router-link to="/leistungen">Leistungen</router-link></li>
-          <li><router-link to="/impressum">Impressum</router-link></li>
         </ul>
       </nav>
       <img src="@/assets/Logo.gif" alt="Logo" class="logo">

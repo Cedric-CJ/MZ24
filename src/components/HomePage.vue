@@ -124,12 +124,6 @@ main {
   background-color: #f5f5f5;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
-}
-
-main:hover {
-  transform: translateY(-10px);
-  background-color: #e5e5e5;
 }
 
 h1 {
