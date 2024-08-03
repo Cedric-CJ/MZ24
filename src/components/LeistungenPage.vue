@@ -13,13 +13,37 @@
       <img src="@/assets/Logo.gif" alt="Logo" class="logo">
     </header>
     <main>
-      <h1 class="fade-in">Willkommen bei</h1>
-      <h2 class="fade-in-delay">Metallbaumeister Zigann</h2>
-      <h3 class="fade-in">Unser Motto:</h3>
-      <h4 class="fade-in">
-        <span class="underline-animation">Zufriedene Kunden</span> sind unsere Basis,<br>
-        hohe Fachkompetenz ist <span class="underline-animation">unsere Zukunft</span>
-      </h4>
+      <h1>Leistungen</h1>
+      <div>
+        <ul>
+          <li>mobile Schlosserei</li>
+          <li>mobile Schweißerei (auch VA, Alu)</li>
+          <li>Rekonstruktionen
+            <ul>
+              <li>- Denkmalschutz</li>
+            </ul>
+          </li>
+          <li>Spezialanfertigungen</li>
+          <li>Metallgestaltung und -verarbeitung
+            <ul>
+              <li>- Edelstahlverarbeitung</li>
+              <li>- Stahlbau</li>
+              <li>- Metallbau für den Innenausbau (z.B. Treppengeländer, Handläufe)</li>
+              <li>- Balkonbau und -verkleidungen</li>
+              <li>- Schlosserarbeiten</li>
+              <li>- Reparatur- und Wartungsarbeiten an Metallkonstruktionen</li>
+            </ul>
+          </li>
+          <li>Sicherheitsgitter und Schutzvorrichtungen</li>
+          <li>Geländer- und Treppenbau für den Außenbereich</li>
+          <li>Vordächer, Zaunkomplettanlagen</li>
+          <li>Fenstergitter, Geländer, Garagentore</li>
+          <li>Handläufe, Treppen, Gittertüren</li>
+          <li>Carports und Überdachungen</li>
+          <li>Tor- und Türanlagen (inklusive automatischer Systeme)</li>
+          <li>Antriebsnachrüstungen</li>
+        </ul>
+      </div>
     </main>
     <footer>
       <div class="footer-content">
@@ -47,7 +71,7 @@
 
 <script>
 export default {
-  name: 'HomePage',
+  name: 'LeistungenPage'
 };
 </script>
 
@@ -128,34 +152,28 @@ main {
   background-color: #f5f5f5;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
-h1 {
-  font-size: 1.5em;
-  margin-bottom: 20px;
-  color: #333;
+main:hover {
+  transform: translateY(-10px);
+  background-color: #e5e5e5;
 }
 
-h2 {
-  font-size: 2em;
-  margin-top: 40px;
-  color: #444;
+ul {
+  text-align: left;
+  margin: 0 auto;
+  max-width: 600px;
+  list-style-type: none;
+  padding-left: 0;
 }
 
-h3 {
-  font-size: 1.5em;
-  margin-top: 20px;
-  color: #555;
+ul li {
+  margin: 10px 0;
 }
 
-h4 {
-  font-size: 1.2em;
-  color: #666;
-}
-
-p {
-  font-size: 1.2em;
-  color: #ffffff;
+ul li ul {
+  margin-left: 20px;
 }
 
 footer {
@@ -164,6 +182,7 @@ footer {
   color: white;
   width: 100%;
   text-align: center;
+  border-radius: 10px;
 }
 
 .footer-content {
@@ -217,44 +236,6 @@ footer {
   color: #f39c12;
 }
 
-.fade-in {
-  opacity: 0;
-  animation: fadeIn 2s forwards;
-}
-
-.fade-in-delay {
-  opacity: 0;
-  animation: fadeIn 2s 1s forwards;
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
-}
-
-.underline-animation {
-  position: relative;
-  display: inline-block;
-  animation: underline 3s forwards;
-}
-
-@keyframes underline {
-  0% {
-    background-size: 0 2px;
-  }
-  100% {
-    background-size: 100% 2px;
-  }
-}
-
-.underline-animation {
-  background-image: linear-gradient(to right, #f39c12, #f39c12);
-  background-position: 0 100%;
-  background-repeat: no-repeat;
-  background-size: 0 2px;
-}
-
 @media (max-width: 768px) {
   header {
     flex-direction: column;
@@ -269,22 +250,6 @@ footer {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-  }
-
-  h1 {
-    font-size: 2em;
-  }
-
-  h2 {
-    font-size: 1.5em;
-  }
-
-  h3 {
-    font-size: 1.2em;
-  }
-
-  h4 {
-    font-size: 1.2em;
   }
 
   .footer-content {
@@ -306,30 +271,6 @@ footer {
 @media (max-width: 480px) {
   header nav ul li {
     margin: 5px;
-  }
-
-  h1 {
-    font-size: 1.5em;
-  }
-
-  h2 {
-    font-size: 1.2em;
-  }
-
-  h3 {
-    font-size: 1em;
-  }
-
-  h4 {
-    font-size: 1em;
-  }
-
-  footer p {
-    font-size: 0.9em;
-  }
-
-  .footer-left p, .footer-right p {
-    font-size: 0.8em;
   }
 
   .footer-right p {
