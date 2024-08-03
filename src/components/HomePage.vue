@@ -16,7 +16,10 @@
       <h1 class="fade-in">Willkommen bei</h1>
       <h2 class="fade-in-delay">Metallbaumeister Zigann</h2>
       <h3 class="fade-in">Unser Motto:</h3>
-      <h4 class="fade-in">Zufriedene Kunden sind unsere Basis,<br>hohe Fachkompetenz ist unsere Zukunft</h4>
+      <h4 class="fade-in">
+        <span class="underline-animation">Zufriedene Kunden</span> sind unsere Basis,<br>
+        hohe Fachkompetenz ist <span class="underline-animation">unsere Zukunft</span>
+      </h4>
     </main>
     <footer>
       <div class="footer-content">
@@ -36,7 +39,7 @@
       </div>
       <div class="footer-links">
         <router-link to="/impressum">Impressum</router-link> |
-        <router-link to="/privacy-policy">Datenschutz</router-link>
+        <router-link to="/datenschutz">Datenschutz</router-link>
       </div>
     </footer>
   </div>
@@ -228,6 +231,28 @@ footer {
   to {
     opacity: 1;
   }
+}
+
+.underline-animation {
+  position: relative;
+  display: inline-block;
+  animation: underline 3s forwards;
+}
+
+@keyframes underline {
+  0% {
+    background-size: 0 2px;
+  }
+  100% {
+    background-size: 100% 2px;
+  }
+}
+
+.underline-animation {
+  background-image: linear-gradient(to right, #f39c12, #f39c12);
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 0 2px;
 }
 
 @media (max-width: 768px) {
