@@ -14,7 +14,7 @@
 
 <script>
 import InfoMessage from '@/components/DSGVO/InfoMessage.vue';
-
+import "@/assets/style.css"
 export default {
   name: 'MZ24',
   components: {
@@ -47,17 +47,4 @@ export default {
 </script>
 
 <style scoped>
-.back-to-top {
-  position: fixed;
-  bottom: 20px;
-  right: 10px;
-  width: 10vh;
-  height: 5vh;
-  cursor: pointer;
-  opacity: 0.7;
-  transition: opacity 0.3s;
-}
-.back-to-top:hover {
-  opacity: 1;
-}
 </style>

@@ -135,56 +135,6 @@ html, body {
   width: 100%;
 }
 
-header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  padding: 10px;
-  background-color: #9f9b9b;
-  color: white;
-  flex-wrap: wrap;
-}
-
-header .logo {
-  width: 150px;
-  height: auto;
-  border-radius: 15px;
-  margin-left: 20px;
-}
-
-header nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-header nav ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-}
-
-header nav ul li {
-  margin: 0 10px;
-}
-
-header nav ul li a {
-  color: white;
-  text-decoration: none;
-  transition: color 0.3s, transform 0.2s;
-}
-
-header nav ul li a:hover {
-  color: #f39c12;
-}
-
-header nav ul li a:active {
-  transform: scale(0.95);
-}
-
 main {
   text-align: center;
   margin: 20px 0;
@@ -204,6 +154,11 @@ main:hover {
 
 .kontakt-section {
   margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column; /* This ensures the text and links stack vertically. */
 }
 
 .impressum-content {
@@ -226,103 +181,6 @@ main:hover {
   margin-top: 20px;
 }
 
-footer {
-  padding: 10px;
-  background-color: #9f9b9b;
-  color: white;
-  width: 100%;
-  text-align: center;
-  border-radius: 10px;
-}
-
-.footer-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  margin-bottom: 10px;
-}
-
-.footer-left {
-  width: 45%;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.footer-right {
-  width: 45%;
-  display: flex;
-  justify-content: center;
-}
-
-.footer-right p {
-  text-align: left;
-  font-size: 0.9em;
-}
-
-.footer-right a {
-  color: #ffffff;
-  text-decoration: none;
-}
-
-.footer-right a:hover {
-  color: #f39c12;
-}
-
-.footer-links {
-  margin-top: 10px;
-}
-
-.footer-links a {
-  color: white;
-  text-decoration: none;
-  margin: 0 5px;
-  transition: color 0.3s;
-}
-
-.footer-links a:hover {
-  color: #f39c12;
-}
-
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-  }
-
-  header .logo {
-    margin-top: 10px;
-    margin-left: 0;
-  }
-
-  header nav ul {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .footer-content {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .footer-left, .footer-right {
-    width: 100%;
-    text-align: center;
-    margin-bottom: 10px;
-  }
-
-  .footer-right p {
-    text-align: center;
-  }
-}
-
-@media (max-width: 480px) {
-  header nav ul li {
-    margin: 5px;
-  }
-
   .footer-right p {
     text-align: center;
   }
@@ -341,5 +199,4 @@ footer {
   .legal-notes {
     text-align: center;
   }
-}
 </style>
