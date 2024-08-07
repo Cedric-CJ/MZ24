@@ -37,7 +37,6 @@ export default {
     }
   },
   mounted() {
-    console.log('InfoMessage component mounted');
     window.addEventListener('scroll', this.handleScroll);
   },
   beforeDestroy() {
