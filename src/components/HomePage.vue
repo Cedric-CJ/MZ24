@@ -51,4 +51,17 @@ export default {
 };
 </script>
 <style scoped>
+footer {
+  position: fixed;
+  bottom: 0vh;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 50vh;
+  box-sizing: border-box;
+}
 </style>

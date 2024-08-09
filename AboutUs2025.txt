@@ -1,0 +1,27 @@
+<h1>Über Uns</h1>
+<div class="about-us">
+  <p>
+    Willkommen bei unserem Meisterbetrieb für Metallbau und Schlosserei! Seit unserer Gründung im Jahr 2004 haben wir uns kontinuierlich weiterentwickelt und ein solides Fundament in der Branche geschaffen. Mit Standorten in Rangsdorf und Fürstenwalde/Spree bieten wir ein breites Spektrum an Dienstleistungen an, die sowohl private als auch gewerbliche Kunden ansprechen.
+  </p>
+  <p>
+    Unsere Reise begann mit der Gründung im Jahr 2004 und einem klaren Fokus auf Qualität und Innovation. Im Jahr 2007 erreichte unser Gründer den Meisterabschluss, was die Basis für unser stetiges Wachstum legte. Unsere Umsiedlung nach Rangsdorf im Jahr 2008, nach Fürstenwalde/Spree im Jahr 2019 und schließlich nach Glienicke im Jahr 2024 ermöglichte es uns, unsere Kapazitäten zu erweitern und unseren Service weiter zu verbessern.
+  </p>
+  <p>
+    Unser Team besteht aus hochqualifizierten und erfahrenen Fachkräften, die ihre Leidenschaft für das Handwerk in jedes Projekt einbringen. Mit jahrelanger Erfahrung und tiefem Fachwissen setzen wir auch die anspruchsvollsten Projekte präzise und termingerecht um. Durch kontinuierliche Weiterbildung und Investitionen in moderne Technologien gewährleisten wir, dass wir unseren Kunden stets die besten Lösungen bieten können.
+  </p>
+  <p>
+    Bei uns stehen Qualität und Kundenzufriedenheit an erster Stelle. Wir arbeiten eng mit unseren Kunden zusammen, um ihre individuellen Wünsche zu verstehen und maßgeschneiderte Lösungen zu entwickeln, die sowohl funktional als auch ästhetisch höchsten Ansprüchen genügen. Von der ersten Beratung bis zur finalen Umsetzung begleiten wir Sie durch den gesamten Prozess und stehen Ihnen mit Rat und Tat zur Seite.
+  </p>
+  <p>
+    Zuverlässigkeit und Termintreue sind für uns ebenso wichtig wie handwerkliche Perfektion. Wir wissen, dass unsere Kunden auf uns zählen, und deshalb setzen wir alles daran, unsere Versprechen zu halten und Projekte pünktlich abzuschließen. Dabei verwenden wir ausschließlich hochwertige Materialien, um langlebige und robuste Konstruktionen zu gewährleisten.
+  </p>
+  <p>
+    Rückblickend auf unsere Erfolge in den letzten zwei Jahrzehnten sind wir stolz auf die Vielzahl realisierter Projekte. Diese reichen von kleinen Reparaturarbeiten über umfassende Renovierungen bis hin zu großen Neubauprojekten. Unabhängig von der Größe wird jeder Auftrag von uns mit der gleichen Sorgfalt und Hingabe behandelt.
+  </p>
+  <p>
+    Lassen Sie uns gemeinsam Ihr nächstes Projekt in Angriff nehmen! Wir freuen uns darauf, Sie kennenzulernen und Ihnen unsere Fähigkeiten unter Beweis zu stellen. Kontaktieren Sie uns für eine unverbindliche Beratung und erfahren Sie mehr darüber, wie wir Ihre Ideen in die Realität umsetzen können. Ihr Vertrauen ist unser Ansporn, und wir sind erst zufrieden, wenn Sie es sind.
+  </p>
+  <p>
+    Vielen Dank für Ihr Interesse an unserem Unternehmen. Wir freuen uns darauf, auch Ihr Projekt erfolgreich umzusetzen und Sie als zufriedenen Kunden begrüßen zu dürfen.
+  </p>
+</div>

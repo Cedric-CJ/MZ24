@@ -1,7 +1,7 @@
 ### Erstellt von Cedric visit my [GitHub](https://cedric-cj.github.io/AboutMe/)
 <script setup>
 //Timeline insperiert von https://github.com/ftes/react-dual-timeline
-import { ref, onMounted } from 'vue';
+import {ref, onMounted, computed} from 'vue';
 import '@/assets/timeline.css';
 //import AlterMann from "@/Bilder/Logo/AlterMann Heizungs- und Sanitär GmbH.svg";
 //import BadSaarowKur from "@/Bilder/Logo/Bad Saarow Kur GmbH.png";
@@ -89,12 +89,22 @@ const handleEscapeKey = (event) => {
 };
 
 const events = ref([
-  { year: 1934, title: "Gründung des Unternehmens", description: "..." },
-  { year: 1937, title: "Erweiterung der Dienstleistungen", description: "..." },
-  { year: 1940, title: "Umzug in größere Räumlichkeiten", description: "..." },
-  { year: 1943, title: "Eröffnung einer neuen Niederlassung", description: "..." },
-  { year: 1946, title: "Einführung neuer Technologien", description: "..." },
+  { year: 2004, title: "Gegründet", description: "Gründung des Unternehmens im Bereich Metallbau und Schlosserei." },
+  { year: 2007, title: "Meisterabschluss", description: "Erhalt des Meisterabschlusses, der das Fundament für weiteres Wachstum legt." },
+  { year: 2008, title: "In Rangsdorf ansässig", description: "Umzug nach Rangsdorf, um näher an den Kunden zu sein und den Service zu verbessern." },
+  { year: 2019, title: "Umzug nach Füwa", description: "Verlegung des Standorts nach Fürstenwalde/Spree, um die Produktionskapazitäten zu erweitern." },
+  { year: 2024, title: "Umzug nach Glienicke", description: "Umzug nach Glienicke, um das Geschäft weiter auszubauen und neue Märkte zu erschließen.",
+    visibleFrom: new Date('2025-01-01') // Datum, ab dem dieses Event sichtbar sein soll
+  }
 ]);
+
+const isEventVisible = (event) => {
+  if (!event.visibleFrom) return true;
+  const today = new Date();
+  return today >= event.visibleFrom;
+};
+
+const visibleEvents = computed(() => events.value.filter(isEventVisible));
 
 onMounted(() => {
   const targets = document.querySelectorAll(".timeline ul li");
@@ -136,19 +146,22 @@ onMounted(() => {
       <h1>Über Uns</h1>
       <div class="about-us">
         <p>
-          Willkommen bei unserem Meisterbetrieb für Metallbau und Schlosserei! Seit unserer Gründung im Jahr 2014 haben wir uns als zuverlässiger und innovativer Partner in der Branche etabliert. Unser Unternehmen hat sich kontinuierlich weiterentwickelt und bietet heute ein umfangreiches Leistungsspektrum im Bereich Metallbau und Schlosserei an. Unsere Dienstleistungen umfassen die Planung, Fertigung und Montage von maßgeschneiderten Metallkonstruktionen für private, gewerbliche und industrielle Kunden.
+          Willkommen bei unserem Meisterbetrieb für Metallbau und Schlosserei! Seit unserer Gründung im Jahr 2004 haben wir uns kontinuierlich weiterentwickelt und ein solides Fundament in der Branche geschaffen. Mit Standorten in Rangsdorf und Fürstenwalde/Spree bieten wir ein breites Spektrum an Dienstleistungen an, die sowohl private als auch gewerbliche Kunden ansprechen.
         </p>
         <p>
-          Unser Team besteht aus hochqualifizierten und erfahrenen Fachkräften, die sich durch ihr handwerkliches Geschick und ihre Leidenschaft für den Beruf auszeichnen. Jeder unserer Mitarbeiter bringt jahrelange Erfahrung und Fachwissen mit, wodurch wir in der Lage sind, auch anspruchsvollste Projekte präzise und termingerecht umzusetzen. Wir investieren kontinuierlich in die Weiterbildung unseres Teams und in moderne Technologien, um unseren Kunden stets die besten Lösungen bieten zu können.
+          Unsere Reise begann mit der Gründung im Jahr 2004 und einem klaren Fokus auf Qualität und Innovation. Im Jahr 2007 erreichte unser Gründer den Meisterabschluss, was die Basis für unser stetiges Wachstum legte. Unsere Umsiedlung nach Rangsdorf im Jahr 2008 und später nach Fürstenwalde/Spree im Jahr 2019 ermöglichte es uns, unsere Kapazitäten zu erweitern und unseren Service weiter zu verbessern.
         </p>
         <p>
-          Qualität und Kundenzufriedenheit stehen bei uns an erster Stelle. Wir arbeiten eng mit unseren Kunden zusammen, um ihre individuellen Wünsche und Anforderungen zu verstehen und umzusetzen. Von der ersten Beratung über die detaillierte Planung bis hin zur finalen Umsetzung – wir begleiten Sie durch den gesamten Prozess und stehen Ihnen mit Rat und Tat zur Seite. Unsere maßgeschneiderten Lösungen sind darauf ausgerichtet, sowohl funktional als auch ästhetisch höchsten Ansprüchen zu genügen.
+          Unser Team besteht aus hochqualifizierten und erfahrenen Fachkräften, die ihre Leidenschaft für das Handwerk in jedes Projekt einbringen. Mit jahrelanger Erfahrung und tiefem Fachwissen setzen wir auch die anspruchsvollsten Projekte präzise und termingerecht um. Durch kontinuierliche Weiterbildung und Investitionen in moderne Technologien gewährleisten wir, dass wir unseren Kunden stets die besten Lösungen bieten können.
         </p>
         <p>
-          Neben unserer Fachkompetenz legen wir großen Wert auf Zuverlässigkeit und Termintreue. Wir wissen, dass unsere Kunden auf uns zählen, und deshalb setzen wir alles daran, unsere Versprechen zu halten und Projekte pünktlich abzuschließen. Dabei achten wir stets auf höchste Qualitätsstandards und verwenden nur hochwertige Materialien, um langlebige und robuste Konstruktionen zu gewährleisten.
+          Bei uns stehen Qualität und Kundenzufriedenheit an erster Stelle. Wir arbeiten eng mit unseren Kunden zusammen, um ihre individuellen Wünsche zu verstehen und maßgeschneiderte Lösungen zu entwickeln, die sowohl funktional als auch ästhetisch höchsten Ansprüchen genügen. Von der ersten Beratung bis zur finalen Umsetzung begleiten wir Sie durch den gesamten Prozess und stehen Ihnen mit Rat und Tat zur Seite.
         </p>
         <p>
-          Wir sind stolz auf die Vielzahl erfolgreicher Projekte, die wir in den letzten Jahren realisieren konnten. Diese reichen von kleinen Reparaturarbeiten über umfangreiche Renovierungen bis hin zu großen Neubauprojekten. Jeder Auftrag, unabhängig von seiner Größe, wird von uns mit der gleichen Sorgfalt und Hingabe behandelt.
+          Zuverlässigkeit und Termintreue sind für uns ebenso wichtig wie handwerkliche Perfektion. Wir wissen, dass unsere Kunden auf uns zählen, und deshalb setzen wir alles daran, unsere Versprechen zu halten und Projekte pünktlich abzuschließen. Dabei verwenden wir ausschließlich hochwertige Materialien, um langlebige und robuste Konstruktionen zu gewährleisten.
+        </p>
+        <p>
+          Rückblickend auf unsere Erfolge in den letzten zwei Jahrzehnten sind wir stolz auf die Vielzahl realisierter Projekte. Diese reichen von kleinen Reparaturarbeiten über umfassende Renovierungen bis hin zu großen Neubauprojekten. Unabhängig von der Größe wird jeder Auftrag von uns mit der gleichen Sorgfalt und Hingabe behandelt.
         </p>
         <p>
           Lassen Sie uns gemeinsam Ihr nächstes Projekt in Angriff nehmen! Wir freuen uns darauf, Sie kennenzulernen und Ihnen unsere Fähigkeiten unter Beweis zu stellen. Kontaktieren Sie uns für eine unverbindliche Beratung und erfahren Sie mehr darüber, wie wir Ihre Ideen in die Realität umsetzen können. Ihr Vertrauen ist unser Ansporn, und wir sind erst zufrieden, wenn Sie es sind.
@@ -160,9 +173,9 @@ onMounted(() => {
       <h1>Unsere Geschichte</h1>
       <div class="timeline">
         <ul>
-          <li v-for="event in events" :key="event.year">
+          <li v-for="event in visibleEvents" :key="event.year">
             <div>
-              <time>{{ event.year }}</time>
+              <time>{{ event.year }}: {{ event.title}}</time>
               <p>{{ event.description }}</p>
             </div>
           </li>
