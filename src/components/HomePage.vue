@@ -52,7 +52,6 @@ export default {
 </script>
 <style scoped>
 footer {
-  position: fixed;
   bottom: 0vh;
 }
 main {
@@ -61,7 +60,6 @@ main {
   justify-content: center;
   align-items: center;
   text-align: center;
-  min-height: 50vh;
-  box-sizing: border-box;
+  height: 50vh;
 }
 </style>
