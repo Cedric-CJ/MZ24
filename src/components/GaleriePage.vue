@@ -274,7 +274,6 @@ header {
   transform: scale(1.05);
 }
 
-
 /* Styles für die Lightbox */
 .lightbox {
   position: fixed;

@@ -76,91 +76,11 @@ export default {
 </script>
 
 <style scoped>
-html, body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-  overflow-x: hidden;
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-family: Arial, sans-serif;
-  padding: 0;
-  width: 100%;
-}
-
-header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  padding: 10px;
-  background-color: #9f9b9b;
-  color: white;
-  flex-wrap: wrap;
-}
-
-header .logo {
-  width: 150px;
-  height: auto;
-  border-radius: 15px;
-  margin-left: 20px;
-}
-
-header nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-header nav ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-}
-
-header nav ul li {
-  margin: 0 10px;
-}
-
-header nav ul li a {
-  color: white;
-  text-decoration: none;
-  transition: color 0.3s, transform 0.2s;
-}
-
-header nav ul li a:hover {
-  color: #f39c12;
-}
-
-header nav ul li a:active {
-  transform: scale(0.95);
-}
-
 main {
   text-align: center;
-  margin: 20px 0;
-  flex-grow: 1;
-  width: 100%;
-  padding: 10px;
-  background-color: #f5f5f5;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
-main:hover {
-  transform: translateY(-10px);
-  background-color: #e5e5e5;
-}
-
-ul {
+main ul {
   text-align: left;
   margin: 0 auto;
   max-width: 600px;
@@ -168,11 +88,11 @@ ul {
   padding-left: 0;
 }
 
-ul li {
+main ul li {
   margin: 10px 0;
 }
 
-ul li ul {
+main ul li ul {
   margin-left: 20px;
 }
 </style>

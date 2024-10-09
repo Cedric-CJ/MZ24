@@ -1,90 +1,49 @@
 ### Erstellt von Cedric visit my [GitHub](https://cedric-cj.github.io/AboutMe/)
 <script setup>
-//Timeline insperiert von https://github.com/ftes/react-dual-timeline
-import {ref, onMounted, computed} from 'vue';
+// Timeline inspiriert von https://github.com/ftes/react-dual-timeline
+import { ref, onMounted, computed } from 'vue';
 import '@/assets/timeline.css';
-//import AlterMann from "@/Bilder/Logo/AlterMann Heizungs- und Sanitär GmbH.svg";
-//import BadSaarowKur from "@/Bilder/Logo/Bad Saarow Kur GmbH.png";
-//import Bardenhagen from "@/Bilder/Logo/Bardenhagen Feinwerk Technik GmbH.png";
-//import Baukontor2000 from "@/Bilder/Logo/Bau kontor 2000 Berlin GmbH.png";
-//import BeckerArmburst from "@/Bilder/Logo/Becker & Armburst GmbH.svg";
-//import BurischGrundbau from "@/Bilder/Logo/Burisch Grundbau GmbH.png";
-//import CURATA from "@/Bilder/Logo/CURATA Senioreneinrichtungen GmbH.png";
-//import DBAngebotsmangment from "@/Bilder/Logo/DB - Angebotsmangment und Service GmbH.png";
-//import Edalko from "@/Bilder/Logo/Edalko GmbH.png";
-//import EngelmannBrunnenbau from "@/Bilder/Logo/Engelmann Brunnenbau GmbH.png";
-//import FacilityManagement from "@/Bilder/Logo/Facility Management.png";
-//import FroebelBildung from "@/Bilder/Logo/FRÖBEL Bildung und Erziehung gemeinnützige GmbH.png";
-//import GlasereiSchwelgin from "@/Bilder/Logo/Glaserei Schwelgin.jpg";
-//import Grundstücksgemeinschaft from "@/Bilder/Logo/Grundstücksgemeinschaft Roswitha und Marie Frost GbR.png";
-//import HeiderLogistik from "@/Bilder/Logo/Heider Logistik GmbH & Co. KG.png";
-//import Heimtiergarten from "@/Bilder/Logo/Heimtiergarten Fürstenwalde.svg";
-//import KalusaSaaten from "@/Bilder/Logo/Kalusa Saaten GmbH.png";
-//import LudwigLamprecht from "@/Bilder/Logo/Ludwig Lamprecht.jpg";
-//import NorbertSchmidt from "@/Bilder/Logo/Norbert Schmidt Hausverwaltung GmbH.png";
-//import PlickertGlaserei from "@/Bilder/Logo/Plickert Glasereibetriebe GmbH.webp";
-//import RobertHelwig from "@/Bilder/Logo/Robert Helwig GmbH.png";
-//import SchliessanlagenBanser from "@/Bilder/Logo/Schliessanlagen Banser.jpg";
-//import Solaritec from "@/Bilder/Logo/Solaritec GmbH.svg";
-//import SBAZV from "@/Bilder/Logo/SBAZV.svg";
-//import Stoeritzland from "@/Bilder/Logo/Störitzland Betriebsgesellschaft mbH.avif";
-//import TiefbauWerner from "@/Bilder/Logo/Tiefbau Werner GmbH.png";
-//import TÜVNordAuto from "@/Bilder/Logo/TÜV Nord Auto GmbH & Co.KG.svg";
-//import Wohnungsbau1924 from "@/Bilder/Logo/Wohnungsbau und Siedlungsgesellschaft von 1924 mbH.png";
-//import ZeppelinRental from "@/Bilder/Logo/Zeppelin Rental GmbH.svg";
+
 import Meisterbrief from "@/Bilder/Meisterbrief.jpg";
 import DBVKZertifikat from "@/Bilder/DB-VK-Zertifikat.jpg";
-import BeispielLogo from "@/assets/Logo.gif";
-const firms = ref([
-//{ name: "AlterMann Heizungs- und Sanitär GmbH", logo: AlterMann },
-//{ name: "Bad Saarow Kur GmbH", logo: BadSaarowKur },
-//{ name: "Bardenhagen Feinwerk Technik GmbH", logo: Bardenhagen },
-//{ name: "Baukontor 2000", logo: Baukontor2000 },
-//{ name: "Becker & Armburst GmbH", logo: BeckerArmburst },
-//{ name: "Burisch Grundbau GmbH", logo: BurischGrundbau },
-//{ name: "Christin und Sascha Schelter Immobilien GbR" },
-//{ name: "CURATA Senioreneinrichtungen GmbH", logo: CURATA },
-//{ name: "DB - Angebotsmangment und Service GmbH", logo: DBAngebotsmangment },
-//{ name: "Edalko GmbH", logo: Edalko },
-//{ name: "Engelmann Brunnenbau GmbH", logo: EngelmannBrunnenbau },
-//{ name: "Facility Management", logo: FacilityManagement },
-//{ name: "FRÖBEL Bildung und Erziehung gemeinnützige GmbH", logo: FroebelBildung },
-//{ name: "Glaserei Schwelgin", logo: GlasereiSchwelgin },
-//{ name: "Grundstücksgemeinschaft Roswitha und Marie Frost GbR", logo: Grundstücksgemeinschaft },
-//{ name: "Heider Logistik GmbH & Co. KG", logo: HeiderLogistik },
-//{ name: "Heimtiergarten Fürstenwalde", logo: Heimtiergarten },
-//{ name: "Kalusa Saaten GmbH", logo: KalusaSaaten },
-//{ name: "Ludwig Lamprecht", logo: LudwigLamprecht },
-//{ name: "Norbert Schmidt Hausverwaltung GmbH", logo: NorbertSchmidt },
-//{ name: "Plickert Glasereibetriebe GmbH", logo: PlickertGlaserei },
-//{ name: "Robert Helwig GmbH", logo: RobertHelwig },
-//{ name: "Schliessanlagen Banser", logo: SchliessanlagenBanser },
-//{ name: "Solaritec GmbH", logo: Solaritec },
-//{ name: "SBAZV", logo: SBAZV },
-//{ name: "Störitzland Betriebsgesellschaft mbH", logo: Stoeritzland },
-//{ name: "Tiefbau Werner GmbH", logo: TiefbauWerner },
-//{ name: "TÜV Nord Auto GmbH & Co.KG", logo: TÜVNordAuto },
-//{ name: "Wohnungsbau und Siedlungsgesellschaft von 1924 mbH", logo: Wohnungsbau1924 },
-//{ name: "Zeppelin Rental GmbH", logo: ZeppelinRental };
-{ name: "Beispiel Firma", logo: BeispielLogo }]);
 
-firms.value.sort((a, b) => a.name.localeCompare(b.name));
+const images = ref([
+  { src: Meisterbrief, alt: 'Meisterbrief' },
+  { src: DBVKZertifikat, alt: 'DB-VK-Zertifikat' },
+]);
 
-const fullScreenImage = ref(null);
+const isLightboxOpen = ref(false);
+const currentIndex = ref(0);
 
-const showFullScreen = (src) => {
-  fullScreenImage.value = src;
-  document.addEventListener('keydown', handleEscapeKey);
+const currentImage = computed(() => images.value[currentIndex.value]);
+const openLightbox = (index) => {
+  currentIndex.value = index;
+  isLightboxOpen.value = true;
+  document.body.style.overflow = 'hidden'; // Scrollen verhindern
+  window.addEventListener('keydown', onKeyDown);
 };
 
-const hideFullScreen = () => {
-  fullScreenImage.value = null;
-  document.removeEventListener('keydown', handleEscapeKey);
+const closeLightbox = () => {
+  isLightboxOpen.value = false;
+  document.body.style.overflow = ''; // Scrollen erlauben
+  window.removeEventListener('keydown', onKeyDown);
 };
 
-const handleEscapeKey = (event) => {
+const nextImage = () => {
+  currentIndex.value = (currentIndex.value + 1) % images.value.length;
+};
+
+const prevImage = () => {
+  currentIndex.value = (currentIndex.value - 1 + images.value.length) % images.value.length;
+};
+
+const onKeyDown = (event) => {
   if (event.key === 'Escape') {
-    hideFullScreen();
+    closeLightbox();
+  } else if (event.key === 'ArrowRight') {
+    nextImage();
+  } else if (event.key === 'ArrowLeft') {
+    prevImage();
   }
 };
 
@@ -94,7 +53,7 @@ const events = ref([
   { year: 2008, title: "In Rangsdorf ansässig", description: "Umzug nach Rangsdorf, um näher an den Kunden zu sein und den Service zu verbessern." },
   { year: 2019, title: "Umzug nach Füwa", description: "Verlegung des Standorts nach Fürstenwalde/Spree, um die Produktionskapazitäten zu erweitern." },
   { year: 2024, title: "Umzug nach Glienicke", description: "Umzug nach Glienicke, um das Geschäft weiter auszubauen und neue Märkte zu erschließen.",
-    visibleFrom: new Date('2026-01-01') // Datum, ab dem dieses Event sichtbar sein soll
+    visibleFrom: new Date('2025-01-01') // Datum, ab dem dieses Event sichtbar sein soll
   }
 ]);
 
@@ -182,8 +141,17 @@ onMounted(() => {
         </ul>
       </div>
       <div class="certificates">
-        <img src="@/Bilder/Meisterbrief.jpg" alt="Meisterbrief" class="certificate" @click="showFullScreen(Meisterbrief)">
-        <img src="@/Bilder/DB-VK-Zertifikat.jpg" alt="DB-VK-Zertifikat" class="certificate" @click="showFullScreen(DBVKZertifikat)">
+        <div
+            v-for="(image, index) in images"
+            :key="index"
+            class="certificate"
+        >
+          <img
+              :src="image.src"
+              :alt="image.alt"
+              @click="openLightbox(index)"
+          />
+        </div>
       </div>
     </main>
     <footer>
@@ -208,8 +176,17 @@ onMounted(() => {
         <router-link to="/datenschutz">Datenschutz</router-link>
       </div>
     </footer>
-    <div v-if="fullScreenImage" class="fullscreen-overlay" @click="hideFullScreen">
-      <img :src="fullScreenImage" class="fullscreen-image" alt="Vollbild">
+    <div
+        v-if="isLightboxOpen"
+        class="lightbox"
+        @click.self="closeLightbox"
+    >
+      <button class="close-button" @click="closeLightbox">×</button>
+      <button class="nav-button prev" @click.stop="prevImage">‹</button>
+      <div class="lightbox-image">
+        <img :src="currentImage.src" :alt="currentImage.alt" />
+      </div>
+      <button class="nav-button next" @click.stop="nextImage">›</button>
     </div>
   </div>
 </template>
@@ -229,4 +206,88 @@ h1 {
   margin: 20px;
 }
 
+.image-item img {
+  width: 100%;
+  height: 200px; /* Einheitliche Höhe für alle Bilder */
+  object-fit: cover;
+  display: block;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: transform 0.2s;
+}
+
+.image-item img:hover {
+  transform: scale(1.05);
+}
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  overflow: hidden;
+}
+
+.lightbox img {
+  max-width: 95vh;
+  max-height: 95vh;
+  object-fit: contain;
+}
+.lightbox {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+.close-button {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  background: transparent;
+  border: none;
+  font-size: 2em;
+  color: white;
+  cursor: pointer;
+}
+
+.nav-button {
+  background: transparent;
+  border: none;
+  font-size: 3em;
+  color: white;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  user-select: none;
+}
+
+.nav-button.prev {
+  left: 10px;
+}
+
+.nav-button.next {
+  right: 10px;
+}
+
+.certificate img {
+  width: 100%;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: transform 0.2s;
+}
+
+.certificate img:hover {
+  transform: scale(1.05);
+}
+
+.certificates {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
 </style>

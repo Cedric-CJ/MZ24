@@ -1,20 +1,24 @@
 <template>
-  <img
+  <button
       v-if="visible"
-      @click="scrollToTop"
-      src=".src/assets/back-to-top-button.png"
-      alt="Back to Top"
       class="back-to-top"
-  />
+      @click="scrollToTop"
+      :src="backToTopImage"
+  >
+    ∧
+  </button>
+
 </template>
 
-
 <script>
+import BackToTopImage from '@/assets/back-to-top-button.png';
+
 export default {
   name: 'BackToTop',
   data() {
     return {
       visible: false,
+      backToTopImage: BackToTopImage,
     };
   },
   methods: {
@@ -47,8 +51,8 @@ export default {
   color: white;
   border: none;
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
+  width: 7vh;
+  height: 7vh;
   font-size: 1.5em;
   cursor: pointer;
   z-index: 1000;
