@@ -38,7 +38,7 @@
             Allee der Kosmonauten 202<br>
             12685 Berlin<br>
             Tel: <a href="tel:+4915785550053">01578 5550053</a><br>
-            E-Mail: <a href="mailto:cedric.jon.arnhold@gmail.com">cedric.jon.arnhold@gmail.com</a></p>
+            E-Mail: <a href="mailto:cedric.jon.arnhold+MZ24administration@gmail.com">cedric.jon.arnhold@gmail.com</a></p>
         </div>
         <div class="impressum-section">
           <p><strong>Zuständige Behörde:</strong></p>

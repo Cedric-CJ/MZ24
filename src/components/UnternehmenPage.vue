@@ -94,7 +94,7 @@ const events = ref([
   { year: 2008, title: "In Rangsdorf ansässig", description: "Umzug nach Rangsdorf, um näher an den Kunden zu sein und den Service zu verbessern." },
   { year: 2019, title: "Umzug nach Füwa", description: "Verlegung des Standorts nach Fürstenwalde/Spree, um die Produktionskapazitäten zu erweitern." },
   { year: 2024, title: "Umzug nach Glienicke", description: "Umzug nach Glienicke, um das Geschäft weiter auszubauen und neue Märkte zu erschließen.",
-    visibleFrom: new Date('2025-01-01') // Datum, ab dem dieses Event sichtbar sein soll
+    visibleFrom: new Date('2026-01-01') // Datum, ab dem dieses Event sichtbar sein soll
   }
 ]);
 
@@ -181,16 +181,6 @@ onMounted(() => {
           </li>
         </ul>
       </div>
-      <h1>Unsere Kunden</h1>
-      <div class="firms-list">
-        <div class="firm" v-for="firm in firms" :key="firm.name">
-          <span>{{ firm.name }}</span>
-          <div class="logo-container">
-            <img v-if="firm.logo" :src="firm.logo" alt="Logo" class="firm-logo" @click="showFullScreen(firm.logo)">
-            <span v-else>Logo nicht gefunden</span>
-          </div>
-        </div>
-      </div>
       <div class="certificates">
         <img src="@/Bilder/Meisterbrief.jpg" alt="Meisterbrief" class="certificate" @click="showFullScreen(Meisterbrief)">
         <img src="@/Bilder/DB-VK-Zertifikat.jpg" alt="DB-VK-Zertifikat" class="certificate" @click="showFullScreen(DBVKZertifikat)">
@@ -232,9 +222,11 @@ main:hover {
 .about-us p {
   font-size: 1.25em;
   text-align: justify;
-  padding: 20px
+  padding: 20px;
+  hyphens: auto;
 }
 h1 {
   margin: 20px;
 }
+
 </style>

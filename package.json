@@ -11,8 +11,11 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "primeicons": "^7.0.0",
+    "primevue": "^4.1.0",
     "vue": "^3.4.29",
-    "vue-router": "^4.4.0"
+    "vue-router": "^4.4.0",
+    "vue-twentytwenty": "^1.0.0-1"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.5",

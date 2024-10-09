@@ -124,7 +124,6 @@ main {
 }
 
 main:hover {
-    transform: translateY(-10px);
     background-color: #e5e5e5;
 }
 
@@ -303,154 +302,6 @@ footer {
     margin-top: 20px;
 }
 
-.gallery-category h2 {
-    text-align: left;
-    font-size: 1.2em;
-    margin-left: 20px;
-}
-
-.gallery-category {
-    margin-bottom: 40px;
-}
-
-.gallery-row {
-    display: flex;
-    align-items: center;
-    position: relative;
-}
-
-.gallery-items {
-    display: flex;
-    overflow: hidden;
-    width: 100%;
-    position: relative;
-}
-
-.gallery-item {
-    flex-shrink: 0;
-    width: calc(25% - 20px);
-    margin: 0 10px;
-    position: relative;
-}
-
-.gallery-item img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: transform 0.2s;
-}
-
-.gallery-item img:hover {
-    transform: scale(1.05);
-}
-
-.nav-arrow {
-    background: none;
-    border: none;
-    font-size: 3em;
-    color: #000000;
-    cursor: pointer;
-    user-select: none;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 10;
-}
-
-.nav-arrow.prev {
-    left: 0;
-}
-
-.nav-arrow.next {
-    right: 0;
-}
-
-.lightbox {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-}
-
-.lightbox-image {
-    max-width: 90%;
-    max-height: 80vh;
-    border-radius: 10px;
-}
-
-.prev, .next {
-    position: absolute;
-    top: 50%;
-    background: rgba(255, 255, 255, 0);
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    transition: background 0.2s;
-}
-
-.prev {
-    left: 10px;
-}
-
-.next {
-    right: 10px;
-}
-
-.prev:hover, .next:hover {
-    background: rgba(255, 255, 255, 1);
-}
-
-/* Firms List and Logos */
-.firms-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-}
-
-.firm {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: calc(25% - 10px);
-    min-width: 200px;
-    padding: 10px;
-    background-color: #d0d0d0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, background-color 0.3s;
-}
-
-.firm:hover {
-    background-color: #c0c0c0;
-}
-
-.logo-container {
-    position: relative;
-    width: 100px;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.firm-logo {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-    cursor: pointer;
-}
-
 .loader {
     border: 4px solid #f3f3f3;
     border-radius: 50%;
@@ -481,25 +332,6 @@ footer {
     100% {
         transform: rotate(360deg);
     }
-}
-
-/* Fullscreen Overlay */
-.fullscreen-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-}
-
-.fullscreen-image {
-    max-width: 90%;
-    max-height: 90%;
 }
 
 @media (max-width: 1024px) {
