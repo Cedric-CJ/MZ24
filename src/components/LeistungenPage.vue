@@ -76,6 +76,29 @@ export default {
 </script>
 
 <style scoped>
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Main-Stile */
+main {
+  flex: 1; /* Nimmt den verfügbaren Platz ein */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 25px;
+}
+
+main h1,
+main h2,
+main h3,
+main h4 {
+  font-size: clamp(1.2rem, 2.5vw, 2rem);
+}
 main {
   text-align: center;
 }

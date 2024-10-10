@@ -51,15 +51,26 @@ export default {
 };
 </script>
 <style scoped>
-footer {
-  bottom: 0vh;
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
+
 main {
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  height: 50vh;
+  padding: 25px;
+}
+
+main h1,
+main h2,
+main h3,
+main h4 {
+  font-size: clamp(1.2rem, 2.5vw, 2rem);
 }
 </style>

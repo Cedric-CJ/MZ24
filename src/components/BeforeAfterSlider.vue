@@ -30,12 +30,17 @@ export default {
     return {
       sliderPosition: 50,
       isDragging: false,
+      animationDirection: 1,
+      animationFrame: null,
     };
   },
   computed: {
     clipStyle() {
       return `inset(0 ${100 - this.sliderPosition}% 0 0)`;
     },
+  },
+  mounted() {
+    this.startAnimation();
   },
   methods: {
     startDragging(event) {
@@ -44,6 +49,8 @@ export default {
       window.addEventListener('mouseup', this.stopDragging);
       window.addEventListener('touchmove', this.onDrag);
       window.addEventListener('touchend', this.stopDragging);
+      // Stoppe die Animation während des Draggens
+      cancelAnimationFrame(this.animationFrame);
     },
     onDrag(event) {
       if (!this.isDragging) return;
@@ -58,11 +65,27 @@ export default {
       window.removeEventListener('mouseup', this.stopDragging);
       window.removeEventListener('touchmove', this.onDrag);
       window.removeEventListener('touchend', this.stopDragging);
+      //this.startAnimation();
     },
+    startAnimation() {
+      this.animationFrame = requestAnimationFrame(this.animateSlider);
+    },
+    animateSlider() {
+      if (this.isDragging) return;
 
+      if (this.sliderPosition >= 70) {
+        this.animationDirection = -1;
+      } else if (this.sliderPosition <= 30) {
+        this.animationDirection = 1;
+      }
+      this.sliderPosition += 0.1 * this.animationDirection; // Geschwindigkeit anpassen
+
+      this.animationFrame = requestAnimationFrame(this.animateSlider);
+    },
   },
   beforeDestroy() {
     this.stopDragging();
+    cancelAnimationFrame(this.animationFrame);
   },
 };
 </script>
@@ -109,10 +132,33 @@ export default {
   top: 0;
   width: 1vh;
   height: 100%;
-  background-color: #fff;
+  background-color: rgba(18, 18, 18, 0.5); /* Halbtransparenter Hintergrund */
   cursor: ew-resize;
   z-index: 2;
   transform: translateX(-50%);
+}
+
+.slider-handle::before,
+.slider-handle::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 8px solid transparent;
+}
+
+.slider-handle::before {
+  border-right: 8px solid #ffffff; /* Farbe des linken Pfeils */
+  left: -14px; /* Position des linken Pfeils */
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.slider-handle::after {
+  border-left: 8px solid #ffffff; /* Farbe des rechten Pfeils */
+  right: -14px; /* Position des rechten Pfeils */
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .before-after-slider:hover .slider-handle {
