@@ -208,7 +208,7 @@ h1 {
 
 .image-item img {
   width: 100%;
-  height: 200px; /* Einheitliche Höhe für alle Bilder */
+  height: 200px;
   object-fit: cover;
   display: block;
   cursor: pointer;
@@ -289,5 +289,19 @@ h1 {
   display: flex;
   justify-content: center;
   margin-top: 20px;
+}
+
+.certificates {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.certificate {
+  width: 150px;
+  margin: 0 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
 }
 </style>

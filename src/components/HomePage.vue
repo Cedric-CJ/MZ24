@@ -51,10 +51,20 @@ export default {
 };
 </script>
 <style scoped>
-.container {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+}
+
+.fade-in-delay {
+  opacity: 0;
+  animation: fadeIn 2s 1s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
 }
 
 main {
@@ -67,10 +77,22 @@ main {
   padding: 25px;
 }
 
-main h1,
-main h2,
-main h3,
-main h4 {
-  font-size: clamp(1.2rem, 2.5vw, 2rem);
+.underline-animation {
+  position: relative;
+  display: inline-block;
+  animation: underline 3s forwards;
+  background-image: linear-gradient(to right, #f39c12, #f39c12);
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 0 2px;
+}
+
+@keyframes underline {
+  0% {
+    background-size: 0 2px;
+  }
+  100% {
+    background-size: 100% 2px;
+  }
 }
 </style>

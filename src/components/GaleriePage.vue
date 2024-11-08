@@ -262,7 +262,7 @@ header {
 
 .image-item img {
   width: 100%;
-  height: 200px; /* Einheitliche Höhe für alle Bilder */
+  height: 200px;
   object-fit: cover;
   display: block;
   cursor: pointer;
@@ -274,7 +274,6 @@ header {
   transform: scale(1.05);
 }
 
-/* Styles für die Lightbox */
 .lightbox {
   position: fixed;
   top: 0;

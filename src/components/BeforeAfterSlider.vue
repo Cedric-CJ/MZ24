@@ -148,15 +148,15 @@ export default {
 }
 
 .slider-handle::before {
-  border-right: 8px solid #ffffff; /* Farbe des linken Pfeils */
-  left: -14px; /* Position des linken Pfeils */
+  border-right: 8px solid #ffffff;
+  left: -14px;
   top: 50%;
   transform: translateY(-50%);
 }
 
 .slider-handle::after {
-  border-left: 8px solid #ffffff; /* Farbe des rechten Pfeils */
-  right: -14px; /* Position des rechten Pfeils */
+  border-left: 8px solid #ffffff;
+  right: -14px;
   top: 50%;
   transform: translateY(-50%);
 }

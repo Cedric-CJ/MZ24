@@ -82,15 +82,16 @@ export default {
   min-height: 100vh;
 }
 
-/* Main-Stile */
 main {
-  flex: 1; /* Nimmt den verfügbaren Platz ein */
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   padding: 25px;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 main h1,

@@ -158,7 +158,7 @@ main:hover {
   justify-content: center;
   align-items: center;
   text-align: center;
-  flex-direction: column; /* This ensures the text and links stack vertically. */
+  flex-direction: column;
 }
 
 .impressum-content {
@@ -167,12 +167,12 @@ main:hover {
   justify-content: space-around;
   align-items: flex-start;
   width: 100%;
-  gap: 20px; /* Abstand zwischen den Abschnitten */
+  gap: 20px;
 }
 
 .impressum-section {
   flex: 1;
-  min-width: 250px; /* Mindestbreite der Abschnitte */
+  min-width: 250px;
   text-align: center;
 }
 
@@ -181,22 +181,46 @@ main:hover {
   margin-top: 20px;
 }
 
-  .footer-right p {
-    text-align: center;
-  }
+.footer-right p {
+  text-align: center;
+}
 
-  .impressum-content {
-    flex-direction: column;
-    align-items: center;
-  }
+.impressum-content {
+  flex-direction: column;
+  align-items: center;
+}
 
-  .impressum-section {
-    width: 100%;
-    text-align: center;
-    margin-bottom: 20px;
-  }
+.impressum-section {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+}
 
-  .legal-notes {
-    text-align: center;
-  }
+.legal-notes {
+  text-align: center;
+}
+
+.kontakt-section, .impressum-content, .legal-notes {
+  text-align: left;
+}
+
+.impressum-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+  width: 100%;
+  gap: 20px;
+}
+
+.impressum-section {
+  flex: 1;
+  min-width: 250px;
+  text-align: center;
+}
+
+.legal-notes {
+  margin-top: 20px;
+}
+
 </style>
