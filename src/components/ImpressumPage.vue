@@ -94,7 +94,6 @@
         </div>
         <div class="footer-right">
           <p>
-            Kontakt:<br>
             Metallbaumeister Zigann<br>
             An der Staatsreserve 2<br>
             15517 Fürstenwalde/Spree<br>
@@ -240,5 +239,18 @@ main h2 {
 main p {
   font-size: calc(0.2vw + 0.8rem);
   margin-bottom: 0.5em;
+}
+@media (min-width: 820px) and (min-height: 1180px) {
+  main h1 {
+    font-size: calc(6vw + 1rem);
+    margin-bottom: .5em;
+  }
+  main p {
+    font-size: calc(2vw + .8rem);
+    margin-bottom: .5em;
+  }
+  main h2 {
+    font-size: calc(2vw + 1rem);
+  }
 }
 </style>

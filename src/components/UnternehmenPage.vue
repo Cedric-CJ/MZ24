@@ -161,7 +161,6 @@ onMounted(() => {
         </div>
         <div class="footer-right">
           <p>
-            Kontakt:<br>
             Metallbaumeister Zigann<br>
             An der Staatsreserve 2<br>
             15517 Fürstenwalde/Spree<br>
@@ -258,13 +257,22 @@ h1 {
   background: transparent;
   border: none;
   font-size: 3em;
-  color: white;
   cursor: pointer;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   user-select: none;
   color: black;
+}
+
+.close-button {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  border: none;
+  font-size: 2em;
+  color: black;
+  cursor: pointer;
 }
 
 .nav-button.prev {
@@ -304,5 +312,58 @@ h1 {
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   cursor: pointer;
+}
+@media (min-width:820px) and (min-height: 1180px) {
+  main h1 {
+    font-size: calc(6vw + 1rem);
+    margin-bottom: .5em;
+  }
+  main h2 {
+    font-size: calc(5vw + 1rem);
+    margin-bottom: .5em;
+  }
+  main h3 {
+    font-size: calc(4vw + 1rem);
+    margin-bottom: .5em;
+  }
+  main h4 {
+    font-size: calc(4vw + 1rem);
+    margin-bottom: .5em;
+  }
+  .about-us p {
+    font-size: 4em;
+  }
+  time {
+    display: block;
+    font-size: 2em;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .timeline ul li div {
+    width: 600px;
+  }
+  .timeline ul li:nth-child(2n) div {
+    left: -639px;
+  }
+  .nav-button {
+    font-size: 15em;
+  }
+  .close-button[data-v-32dc9a5e] {
+    position: fixed;
+    top: 30px;
+    right: 50px;
+    background: transparent;
+    border: none;
+    font-size: 10em;
+    color: #fff;
+    cursor: pointer;
+  }
+  .certificate {
+    width: 400px;
+    margin: 0 100px;
+  }
+  .certificates {
+    margin-top: 100px;
+  }
 }
 </style>

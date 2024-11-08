@@ -67,4 +67,9 @@ export default {
 .back-to-top:active {
   transform: scale(0.95);
 }
+@media (min-width:820px) and (min-height: 1180px) {
+  .back-to-top {
+    font-size: 7em;
+  }
+}
 </style>
