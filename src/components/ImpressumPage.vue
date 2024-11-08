@@ -214,13 +214,31 @@ main:hover {
 }
 
 .impressum-section {
-  flex: 1;
-  min-width: 250px;
+  width: 100%;
+  margin-bottom: 20px;
   text-align: center;
+}
+
+@media (max-width: 768px) {
+  .impressum-content {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .legal-notes {
   margin-top: 20px;
 }
-
+main h1 {
+  font-size: calc(1vw + 1rem);
+  margin-bottom: 0.5em;
+}
+main h2 {
+  font-size: calc(0.5vw + 1rem);
+  margin-bottom: 0.5em;
+}
+main p {
+  font-size: calc(0.2vw + 0.8rem);
+  margin-bottom: 0.5em;
+}
 </style>

@@ -264,6 +264,7 @@ h1 {
   top: 50%;
   transform: translateY(-50%);
   user-select: none;
+  color: black;
 }
 
 .nav-button.prev {

@@ -223,19 +223,6 @@ body {
   width: 100%;
 }
 
-header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  padding: 10px;
-  background-color: #9f9b9b;
-  color: white;
-  flex-wrap: wrap;
-  position: relative;
-  z-index: 1;
-}
-
 .gallery {
   width: 100%;
   padding: 20px;
@@ -312,13 +299,20 @@ header {
 }
 
 .nav-button {
-  background: transparent;
+  background: rgba(255, 255, 255, 0.7);
   border: none;
-  font-size: 3em;
-  color: white;
+  font-size: 2em;
+  color: black;
   cursor: pointer;
   position: absolute;
   top: 50%;
+  border-radius: 50%;
+  height: 1em;
+  width: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transform: translateY(-50%);
   user-select: none;
 }
