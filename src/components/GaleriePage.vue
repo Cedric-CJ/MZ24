@@ -248,7 +248,6 @@ body {
 
 .image-item img {
   width: 100%;
-  height: 10vh;
   object-fit: cover;
   display: block;
   cursor: pointer;
@@ -297,7 +296,7 @@ body {
   cursor: pointer;
 }
 
-@media (min-width: 520px){
+@media (min-width: 520px) {
   .nav-button {
     background: rgba(255, 255, 255, 0.7);
     border: none;
@@ -308,9 +307,6 @@ body {
     top: 50%;
     transform: translateY(-50%);
     user-select: none;
-  }
-  .back-to-top {
-    font-size: 7em;
   }
 }
 
