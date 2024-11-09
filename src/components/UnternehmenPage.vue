@@ -242,37 +242,45 @@ h1 {
   max-height: 100%;
   object-fit: cover;
 }
-.close-button {
-  position: fixed;
-  top: 30px;
-  right: 30px;
-  background: transparent;
-  border: none;
-  font-size: 2em;
-  color: white;
-  cursor: pointer;
-}
 
 .nav-button {
-  background: transparent;
+  background: white;
   border: none;
-  font-size: 3em;
+  font-size: 2em;
   cursor: pointer;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  -webkit-user-select: none;
   user-select: none;
-  color: black;
+  color: #000;
+  border-radius: 50%;
+  width: 3em;
+  height: 3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .close-button {
-  position: fixed;
-  top: 30px;
-  right: 30px;
+  top: 10%;
+  right: 10%;
+  background: white;
   border: none;
   font-size: 2em;
-  color: black;
   cursor: pointer;
+  position: absolute;
+  transform: translateY(-50%);
+  user-select: none;
+  color: #000;
+  border-radius: 50%;
+  width: 1em;
+  height: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .nav-button.prev {
@@ -344,19 +352,6 @@ h1 {
   }
   .timeline ul li:nth-child(2n) div {
     left: -639px;
-  }
-  .nav-button {
-    font-size: 15em;
-  }
-  .close-button[data-v-32dc9a5e] {
-    position: fixed;
-    top: 30px;
-    right: 50px;
-    background: transparent;
-    border: none;
-    font-size: 10em;
-    color: #fff;
-    cursor: pointer;
   }
   .certificate {
     width: 400px;

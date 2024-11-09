@@ -93,7 +93,6 @@ main h2 {
     margin-bottom: 0.5em;
 }
 main p {
-    font-size: calc(1vw + 0.8rem);
     margin-bottom: 0.5em;
 }
 
@@ -192,7 +191,6 @@ footer {
         font-size: calc(1vw + 0.8vh);
     }
 }
-
 @media (max-width: 480px) {
     main h1 {
         font-size: 3vh;
@@ -208,7 +206,7 @@ footer {
     }
 }
 @media (min-width:820px) and (min-height: 1180px) {
-    .info-message[data-v-dc797dc9] {
+    .info-message {
         border-radius: 50px;
     }
     .info-message p {
@@ -268,7 +266,6 @@ footer {
         justify-content: center;
         align-items: center;
     }
-
     .footer-left p, .footer-right p, .footer-links a {
         margin-top: 10px;
         white-space: nowrap;
@@ -300,10 +297,7 @@ footer {
     .timeline ul li:nth-child(2n) div {
         left: -639px;
     }
-    .nav-button {
-        font-size: 15em;
-    }
-    .close-button[data-v-32dc9a5e] {
+    .close-button {
         position: fixed;
         top: 30px;
         right: 50px;

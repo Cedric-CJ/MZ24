@@ -188,11 +188,13 @@ export default {
     font-size: calc(6vw + 1rem);
     margin-bottom: .5em;
   }
-
   main p {
     font-size: calc(2vw + .8rem);
     margin-bottom: .5em;
   }
+  main h2 {
+    font-size: calc(2vw + 1rem);
+    margin-bottom: .5em;
+  }
 }
-
 </style>

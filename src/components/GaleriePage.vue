@@ -285,29 +285,44 @@ body {
   object-fit: cover;
 }
 
-.close-button {
-  position: fixed;
-  top: 30px;
-  right: 30px;
-  background: transparent;
+.nav-button {
+  background: white;
   border: none;
   font-size: 2em;
-  color: white;
   cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-user-select: none;
+  user-select: none;
+  color: #000;
+  border-radius: 50%;
+  width: 3em;
+  height: 3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-@media (min-width: 520px) {
-  .nav-button {
-    background: rgba(255, 255, 255, 0.7);
-    border: none;
-    font-size: 2em;
-    color: black;
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    user-select: none;
-  }
+.close-button {
+  top: 10%;
+  right: 10%;
+  background: white;
+  border: none;
+  font-size: 2em;
+  cursor: pointer;
+  position: absolute;
+  transform: translateY(-50%);
+  user-select: none;
+  color: #000;
+  border-radius: 50%;
+  width: 1em;
+  height: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .nav-button.prev {

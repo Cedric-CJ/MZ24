@@ -180,10 +180,6 @@ main:hover {
   margin-top: 20px;
 }
 
-.footer-right p {
-  text-align: center;
-}
-
 .impressum-content {
   flex-direction: column;
   align-items: center;
@@ -251,6 +247,7 @@ main p {
   }
   main h2 {
     font-size: calc(2vw + 1rem);
+    margin-bottom: .5em;
   }
 }
 </style>
