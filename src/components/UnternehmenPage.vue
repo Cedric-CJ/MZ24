@@ -52,9 +52,7 @@ const events = ref([
   { year: 2007, title: "Meisterabschluss", description: "Erhalt des Meisterabschlusses, der das Fundament für weiteres Wachstum legt." },
   { year: 2008, title: "In Rangsdorf ansässig", description: "Umzug nach Rangsdorf, um näher an den Kunden zu sein und den Service zu verbessern." },
   { year: 2019, title: "Umzug nach Füwa", description: "Verlegung des Standorts nach Fürstenwalde/Spree, um die Produktionskapazitäten zu erweitern." },
-  { year: 2024, title: "Umzug nach Glienicke", description: "Umzug nach Glienicke, um das Geschäft weiter auszubauen und neue Märkte zu erschließen.",
-    visibleFrom: new Date('2025-01-01') // Datum, ab dem dieses Event sichtbar sein soll
-  }
+  { year: 2024, title: "Umzug nach Glienicke Rietz-Neuendorf", description: "Umzug nach Glienicke, um das Geschäft weiter auszubauen und neue Märkte zu erschließen."}
 ]);
 
 const isEventVisible = (event) => {
@@ -162,8 +160,8 @@ onMounted(() => {
         <div class="footer-right">
           <p>
             Metallbaumeister Zigann<br>
-            An der Staatsreserve 2<br>
-            15517 Fürstenwalde/Spree<br>
+            Radlower Str. 1<br>
+            15848 Rietz-Neuendorf<br>
             <a href="tel:+491634227950">Tel: 0163 / 42 27 950</a><br>
             <a href="mailto:info@mz24.net">info@mz24.net</a>
           </p>

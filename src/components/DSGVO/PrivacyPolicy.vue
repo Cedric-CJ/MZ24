@@ -162,8 +162,8 @@
         <div class="footer-right">
           <p>
             Metallbaumeister Zigann<br>
-            An der Staatsreserve 2<br>
-            15517 Fürstenwalde/Spree<br>
+            Radlower Str. 1<br>
+            15848 Rietz-Neuendorf<br>
             <a href="tel:+491634227950">Tel: 0163 / 42 27 950</a><br>
             <a href="mailto:info@mz24.net">info@mz24.net</a>
           </p>
