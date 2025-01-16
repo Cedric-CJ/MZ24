@@ -15,51 +15,22 @@
     <main>
       <h1>Galerie</h1>
       <div class="gallery">
-        <div
-            v-for="(categoryImages, categoryName) in images"
-            :key="categoryName"
-            class="category"
-        >
+        <div v-for="(categoryImages, categoryName) in images" :key="categoryName" class="category">
           <h2>{{ categoryName }}</h2>
           <div class="image-grid">
-            <div
-                v-for="(image, index) in categoryImages"
-                :key="index"
-                class="image-item"
-            >
-              <component
-                  :is="image.slider ? 'BeforeAfterSlider' : 'img'"
-                  :src="image.src"
-                  :alt="image.alt"
-                  :before-src="image.beforeSrc"
-                  :after-src="image.afterSrc"
-                  @click.native="!image.slider && openLightbox(categoryName, index)"
-                  @click="image.slider && openLightbox(categoryName, index)"
-              />
+            <div v-for="(image, index) in categoryImages" :key="index" class="image-item">
+              <component :is="image.slider ? 'BeforeAfterSlider' : 'img'" :src="image.src" :alt="image.alt" :before-src="image.beforeSrc" :after-src="image.afterSrc" @click.native="!image.slider && openLightbox(categoryName, index)" @click="image.slider && openLightbox(categoryName, index)"/>
             </div>
           </div>
         </div>
       </div>
-      <!-- Lightbox Modal -->
-      <div
-          v-if="isLightboxOpen"
-          class="lightbox"
-          @click.self="closeLightbox"
-      >
+      <div v-if="isLightboxOpen" class="lightbox" @click.self="closeLightbox">
         <button class="close-button" @click="closeLightbox">×</button>
         <div class="lightbox-content">
           <button class="nav-button prev" @click.stop="prevImage">‹</button>
           <div class="lightbox-image">
-            <img
-                v-if="!currentImage.slider"
-                :src="currentImage.src"
-                :alt="currentImage.alt"
-            />
-            <BeforeAfterSlider
-                v-else
-                :before-src="currentImage.beforeSrc"
-                :after-src="currentImage.afterSrc"
-            />
+            <img v-if="!currentImage.slider" :src="currentImage.src" :alt="currentImage.alt"/>
+            <BeforeAfterSlider v-else :before-src="currentImage.beforeSrc" :after-src="currentImage.afterSrc"/>
           </div>
           <button class="nav-button next" @click.stop="nextImage">›</button>
         </div>
@@ -71,8 +42,7 @@
           <p>Schnell - Zuverlässig - Günstig<br>Einmalig in Deutschland</p>
         </div>
         <div class="footer-right">
-          <p>
-            Metallbaumeister Zigann<br>
+          <p>Metallbaumeister Zigann<br>
             Radlower Str. 1<br>
             15848 Rietz-Neuendorf<br>
             <a href="tel:+491634227950">Tel: 0163 / 42 27 950</a><br>
@@ -87,10 +57,8 @@
     </footer>
   </div>
 </template>
-
 <script>
 import BeforeAfterSlider from './BeforeAfterSlider.vue';
-
 import BalkonVorher from '@/Bilder/Balkon/Balkon_vorher.JPG';
 import BalkonNachher from '@/Bilder/Balkon/Balkon_nachher.JPG';
 import Balkon1 from '@/Bilder/Balkon/Balkon 1.JPG';
@@ -109,7 +77,6 @@ import Tor1 from '@/Bilder/Tür_Tor_Treppe_Fenster/Tor 1.JPG';
 import Tor2 from '@/Bilder/Tür_Tor_Treppe_Fenster/Tor 2.JPG';
 import Tor3 from '@/Bilder/Tür_Tor_Treppe_Fenster/Tor 3.JPG';
 import Tor4 from '@/Bilder/Tür_Tor_Treppe_Fenster/Tor 4.JPG';
-
 import Sonstiges1 from '@/Bilder/Sonstiges 1.JPG';
 
 export default {
@@ -286,9 +253,9 @@ body {
 }
 
 .nav-button {
-  background: white;
+  background: rgba(255, 255, 255, 0.6);
   border: none;
-  font-size: 2em;
+  font-size: 5vw;
   cursor: pointer;
   position: absolute;
   top: 50%;
@@ -308,7 +275,7 @@ body {
 .close-button {
   top: 10%;
   right: 10%;
-  background: white;
+  background: rgba(255, 255, 255, 0.6);
   border: none;
   font-size: 2em;
   cursor: pointer;

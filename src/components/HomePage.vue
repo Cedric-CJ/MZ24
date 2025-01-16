@@ -17,8 +17,8 @@
       <h2 class="fade-in-delay">Metallbaumeister Zigann</h2>
       <h3 class="fade-in">Unser Motto:</h3>
       <h4 class="fade-in">
-        <span class="underline-animation">Zufriedene Kunden</span> sind unsere Basis,<br>
-        hohe Fachkompetenz ist <span class="underline-animation">unsere Zukunft</span>
+        <span class="animation">Zufriedene Kunden</span> sind unsere Basis,<br>
+        hohe Fachkompetenz ist <span class="animation">unsere Zukunft</span>
       </h4>
     </main>
     <footer>
@@ -50,19 +50,28 @@ export default {
 };
 </script>
 <style scoped>
-.fade-in {
-  opacity: 0;
-  animation: fadeIn 2s forwards;
+.animation {
+  position: relative;
+  display: inline-block;
+  color: #000;
+  animation: subtleFlicker 3s infinite;
 }
 
-.fade-in-delay {
-  opacity: 0;
-  animation: fadeIn 2s 1s forwards;
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
+@keyframes subtleFlicker {
+  0% {
+    text-shadow: 0 0 2px #f39c12, 0 0 4px #f39c12;
+    transform: scale(1);
+    color: #000;
+  }
+  50% {
+    text-shadow: 0 0 6px #f39c12, 0 0 10px #f39c12;
+    transform: scale(1.03);
+    color: #f39c12;
+  }
+  100% {
+    text-shadow: 0 0 2px #f39c12, 0 0 4px #f39c12;
+    transform: scale(1);
+    color: #000;
   }
 }
 
@@ -74,34 +83,5 @@ main {
   align-items: center;
   text-align: center;
   padding: 25px;
-}
-
-.underline-animation {
-  position: relative;
-  display: inline-block;
-  animation: underline 3s forwards;
-  background-image: linear-gradient(to right, #f39c12, #f39c12);
-  background-position: 0 100%;
-  background-repeat: no-repeat;
-  background-size: 0 2px;
-}
-
-@keyframes underline {
-  0% {
-    background-size: 0 2px;
-  }
-  100% {
-    background-size: 100% 2px;
-  }
-}
-@media (min-width:820px) and (min-height: 1180px) {
-  @keyframes underline {
-    0% {
-      background-size: 0 20px;
-    }
-    100% {
-      background-size: 100% 20px;
-    }
-  }
 }
 </style>

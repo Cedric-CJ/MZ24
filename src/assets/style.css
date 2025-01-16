@@ -28,10 +28,11 @@ header {
 }
 
 header .logo {
-    width: 150px;
-    height: auto;
+    width: calc(10vw + 5rem);
+    min-height: 100px;
+    min-width: 100px;
+    padding-left: 10px;
     border-radius: 15px;
-    margin-left: 20px;
 }
 
 header nav {
@@ -57,7 +58,7 @@ header nav ul li a {
     color: white;
     text-decoration: none;
     transition: color 0.3s, transform 0.2s;
-    font-size: calc(1vw + 0.5rem);
+    font-size: calc(2vw + 0.5rem);
 }
 
 header nav ul li a:hover {
@@ -85,76 +86,81 @@ main:hover {
 }
 
 main h1 {
-    font-size: calc(2vw + 1rem);
-    margin-bottom: 0.5em;
+    font-size: calc(5vw + 1rem);
+    margin-bottom: .5em;
 }
 main h2 {
-    font-size: calc(1.5vw + 1rem);
-    margin-bottom: 0.5em;
+    font-size: calc(4vw + 1rem);
+    margin-bottom: .5em;
 }
-main p {
-    margin-bottom: 0.5em;
+main h3 {
+    font-size: calc(3vw + 1rem);
+    margin-bottom: .5em;
+}
+main h4 {
+    font-size: calc(2vw + 1rem);
+    margin-bottom: .5em;
 }
 
-h1, h2, h3, h4, p {
+h1, h2, h3, h4 {
     color: #000;
 }
 
 footer {
-    padding: 10px;
-    background-color: #9f9b9b;
-    color: white;
+    display: flex;
     width: 100%;
-    text-align: center;
+    flex-wrap: wrap; /* Flexibles Layout */
+    justify-content: space-between; /* Platz zwischen den Blöcken */
+    align-items: center;
+    background-color: #9f9b9b; /* Hintergrundfarbe */
+    color: white; /* Schriftfarbe */
+    font-size: 0.9rem; /* Schriftgröße */
 }
 
 .footer-content {
+    width: 100%; /* Volle Breite nutzen */
+    max-width: 1200px; /* Maximalbreite */
+    margin: 0 auto; /* Zentrierung */
     display: flex;
+    flex-wrap: wrap; /* Flexibles Layout */
     justify-content: space-between;
     align-items: center;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
 }
 
-.footer-left, .footer-right {
-    width: 45%;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.footer-left,
+.footer-right {
+    flex: 1; /* Gleiche Breite für beide Abschnitte */
+    min-width: 200px; /* Mindestbreite */
+    padding: 10px; /* Abstand */
 }
 
-.footer-right p {
-    color: white;
-    text-align: left;
-    font-size: calc(0.8vw + 0.5rem);
-}
-
-.footer-right a {
-    color: white;
+.footer-right a{
     text-decoration: none;
 }
 
-.footer-right a:hover {
-    color: #f39c12;
+.footer-left p,
+.footer-right p {
+    margin: 0; /* Standardabstände entfernen */
+    line-height: 1.5; /* Bessere Lesbarkeit */
+    text-align: center; /* Zentrierung */
 }
 
-.footer-left p{
-    color: white;
-    margin-top: 10px;
-    font-size: calc(0.8vw + 0.5rem);
+.footer-links {
+    width: 100%; /* Volle Breite */
+    text-align: center; /* Zentrierung */
+    margin-top: 15px; /* Abstand nach oben */
+    padding-bottom: 15px; /
 }
 
 .footer-links a {
     color: white;
     text-decoration: none;
-    margin: 0 5px;
-    transition: color 0.3s;
+    margin: 0 10px; /* Platz zwischen Links */
+    transition: color 0.3s ease-in-out;
 }
 
 .footer-links a:hover {
-    color: #f39c12;
+    color: #f39c12; /* Farbe beim Hover */
 }
 
 .loader {
@@ -206,58 +212,29 @@ footer {
     }
 }
 @media (min-width:820px) and (min-height: 1180px) {
-    .info-message {
-        border-radius: 50px;
-    }
-    .info-message p {
-        color: #fff;
-        margin: 0;
-        padding: 0;
-        font-size: calc(2vw + 1rem);
-    }
-    .info-message button {
-        margin-top: 10px;
-        padding: 10px;
-        border: none;
-        background-color: #f39c12;
-        color: #fff;
-        cursor: pointer;
-        border-radius: 5px;
-        font-size: calc(2vw + 1rem);
-    }
     header nav ul li a {
         font-size: calc(2vw + 0.5rem);
-        padding: 50px;
     }
     header .logo {
         width: 10vh;
         height: auto;
-        border-radius: 50px;
         margin-left: 50px;
     }
     main h1 {
-        font-size: calc(6vw + 1rem);
-        margin-bottom: .5em;
-    }
-    main h2 {
         font-size: calc(5vw + 1rem);
         margin-bottom: .5em;
     }
-    main h3 {
+    main h2 {
         font-size: calc(4vw + 1rem);
+        margin-bottom: .5em;
+    }
+    main h3 {
+        font-size: calc(3vw + 1rem);
         margin-bottom: .5em;
     }
     main h4 {
-        font-size: calc(4vw + 1rem);
+        font-size: calc(2vw + 1rem);
         margin-bottom: .5em;
-    }
-    @keyframes underline {
-        0% {
-            background-size: 0 20px;
-        }
-        100% {
-            background-size: 100% 20px;
-        }
     }
     .footer-left, .footer-right {
         width: 5%;
@@ -269,7 +246,7 @@ footer {
     .footer-left p, .footer-right p, .footer-links a {
         margin-top: 10px;
         white-space: nowrap;
-        font-size: calc(2.5vw + .5rem);
+        font-size: calc(2vw + .5rem);
     }
     .footer-right p {
         text-align: center;
@@ -283,7 +260,7 @@ footer {
         display: inline-block;
     }
     .about-us p {
-        font-size: 4em;
+        font-size: 5em;
     }
     time {
         display: block;
@@ -292,29 +269,9 @@ footer {
         margin-bottom: 8px;
     }
     .timeline ul li div {
-        width: 600px;
+        width: 40vw;
     }
     .timeline ul li:nth-child(2n) div {
-        left: -639px;
-    }
-    .close-button {
-        position: fixed;
-        top: 30px;
-        right: 50px;
-        background: transparent;
-        border: none;
-        font-size: 10em;
-        color: #fff;
-        cursor: pointer;
-    }
-    .back-to-top {
-       font-size: 7em;
-    }
-    .certificate {
-        width: 400px;
-        margin: 0 100px;
-    }
-    .certificates {
-        margin-top: 100px;
+        left: -45vw;
     }
 }

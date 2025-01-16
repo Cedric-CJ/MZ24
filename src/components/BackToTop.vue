@@ -1,18 +1,9 @@
 <template>
-  <button
-      v-if="visible"
-      class="back-to-top"
-      @click="scrollToTop"
-      :src="backToTopImage"
-  >
-    ∧
+  <button v-if="visible" class="back-to-top" @click="scrollToTop"><img :src="backToTopImage" alt="Back to Top" />
   </button>
-
 </template>
-
 <script>
 import BackToTopImage from '@/assets/back-to-top-button.png';
-
 export default {
   name: 'BackToTop',
   data() {
@@ -41,23 +32,29 @@ export default {
   },
 };
 </script>
-
 <style scoped>
 .back-to-top {
+  width: 10vw; /* Dynamische Breite */
+  height: 10vw; /* Dynamische Höhe */
+  max-width: 80px; /* Maximale Breite */
+  max-height: 80px; /* Maximale Höhe */
+  border-radius: 50%; /* Kreisform */
   position: fixed;
-  bottom: 30px;
-  right: 30px;
+  bottom: 5vh;
+  right: 5vw;
   background-color: #f39c12;
-  color: white;
-  border: none;
-  border-radius: 50%;
-  width: 7vh;
-  height: 7vh;
-  font-size: 1.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
   z-index: 1000;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-  transition: opacity 0.3s, transform 0.3s;
+}
+
+.back-to-top img {
+  width: 100%; /* Passt sich der Größe des Buttons an */
+  height: 100%; /* Passt sich der Größe des Buttons an */
+  object-fit: contain; /* Verhindert Verzerrungen */
+  border-radius: 50%; /* Für einen kreisförmigen Button */
 }
 
 .back-to-top:hover {
@@ -66,10 +63,5 @@ export default {
 
 .back-to-top:active {
   transform: scale(0.95);
-}
-@media (min-width:820px) and (min-height: 1180px) {
-  .back-to-top {
-    font-size: 7em;
-  }
 }
 </style>
