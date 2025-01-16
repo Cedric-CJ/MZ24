@@ -215,6 +215,8 @@ body {
 
 .image-item img {
   width: 100%;
+  max-width: calc(50vw + 100px);
+  max-height: calc(30vh + 50px);
   object-fit: cover;
   display: block;
   cursor: pointer;

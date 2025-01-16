@@ -50,6 +50,21 @@ export default {
 };
 </script>
 <style scoped>
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+}
+
+.fade-in-delay {
+  opacity: 0;
+  animation: fadeIn 2s 1s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
 .animation {
   position: relative;
   display: inline-block;
@@ -83,5 +98,14 @@ main {
   align-items: center;
   text-align: center;
   padding: 25px;
+  max-height: calc(100vh - 15vh - 50px); /* Dynamische Höhe: Bildschirmhöhe - Footerhöhe */
+  overflow-y: auto; /* Scrollen erlauben, falls Inhalte zu groß sind */
+}
+
+@media (max-width: 768px) {
+  main {
+    max-height: 60vh; /* Weniger Platz für Main auf mobilen Geräten */
+    padding: 10px;
+  }
 }
 </style>

@@ -233,7 +233,7 @@ h1 {
 }
 
 .nav-button {
-  background: white;
+  background: rgba(255, 255, 255, 0.6);;
   border: none;
   font-size: 2em;
   cursor: pointer;
@@ -255,7 +255,7 @@ h1 {
 .close-button {
   top: 10%;
   right: 10%;
-  background: white;
+  background: rgba(255, 255, 255, 0.6);
   border: none;
   font-size: 2em;
   cursor: pointer;

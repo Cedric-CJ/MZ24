@@ -1,0 +1,17 @@
+# Spezifische Regeln für Googlebot (Crawler von Google)
+User-agent: Googlebot
+Allow: /public/
+
+# Regel für den Bingbot (Crawler von Bing)
+User-agent: Bingbot
+Allow: /public/
+
+# ChatGPT Search-Spezifische Einstellungen
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: GPTBot
+Disallow: /
