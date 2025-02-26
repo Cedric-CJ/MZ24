@@ -32,7 +32,6 @@ header .logo {
     width: calc(10vw + 5rem);
     min-height: 100px;
     min-width: 100px;
-    padding: 10px;
     border-radius: 15px;
     max-width: 20vh;
 }
