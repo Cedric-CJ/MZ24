@@ -1,17 +1,7 @@
-### Erstellt von Cedric visit my [GitHub](https://cedric-cj.github.io/AboutMe/)
+### Erstellt von Cedric visit my [GitHub](https://spezialcode.de/)
 <template>
   <div class="container">
-    <header>
-      <nav>
-        <ul>
-          <li><router-link to="/">Startseite</router-link></li>
-          <li><router-link to="/unternehmen">Über Uns</router-link></li>
-          <li><router-link to="/galerie">Galerie</router-link></li>
-          <li><router-link to="/leistungen">Leistungen</router-link></li>
-        </ul>
-      </nav>
-      <img src="@/assets/Logo.gif" alt="Logo" class="logo">
-    </header>
+    <Header />
     <main>
       <h1>Über Uns</h1>
       <div class="about-us">
@@ -92,6 +82,8 @@
 // Timeline inspiriert von https://github.com/ftes/react-dual-timeline
 import { ref, onMounted, computed } from 'vue';
 import '@/assets/timeline.css';
+import Header from '@/components/layout/Header.vue'
+import Footer from '@/components/layout/Footer.vue'
 
 import Meisterbrief from "@/Bilder/Meisterbrief.jpg";
 import DBVKZertifikat from "@/Bilder/DB-VK-Zertifikat.jpg";

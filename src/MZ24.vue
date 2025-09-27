@@ -1,3 +1,4 @@
+### Erstellt von Cedric visit my [GitHub](https://spezialcode.de/)
 <template>
   <div id="app">
     <router-view></router-view>
@@ -7,18 +8,15 @@
 </template>
 
 <script>
-import InfoMessage from '@/components/DSGVO/InfoMessage.vue';
-import BackToTop from '@/components/BackToTop.vue';
+import InfoMessage from './components/DSGVO/InfoMessage.vue';
+import BackToTop from './components/layout/BackToTop.vue';
 
 export default {
   name: 'MZ24',
-  components: {
-    InfoMessage,
-    BackToTop,
-  },
+  components: { InfoMessage, BackToTop },
   data() {
     return {
-      showMessage: true,
+      showMessage: !localStorage.getItem('mz24_info_ack'),
     };
   },
 };

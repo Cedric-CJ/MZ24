@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import HomePage from './components/HomePage.vue';
 import GaleriePage from './components/GaleriePage.vue';
 import LeistungenPage from './components/LeistungenPage.vue';
-import ImpressumPage from './components/ImpressumPage.vue';
+import ImpressumPage from '@/components/DSGVO/ImpressumPage.vue';
 import UnternehmenPage from './components/UnternehmenPage.vue';
 import PrivacyPolicy from "@/components/DSGVO/PrivacyPolicy.vue";
 

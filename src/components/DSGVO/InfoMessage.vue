@@ -1,3 +1,4 @@
+### Erstellt von Cedric visit my [GitHub](https://spezialcode.de/)
 <template>
   <div class="info-message">
     <div>
@@ -36,10 +37,13 @@ export default {
   methods: {
     confirmRedirect() {
       if (confirm('Sie verlassen jetzt die Seite und gelangen zur Seite des Erstellers dieser Seite. Möchten Sie fortfahren?')) {
-        window.location.href = 'https://cedric-cj.github.io/AboutMe/';
+        window.location.href = 'https://spezialcode.de/';
       }
     },
     closeMessage() {
+      try {
+        localStorage.setItem('mz24_info_ack', '1');
+      } catch (e) { /* ignore storage errors */ }
       this.$emit('close-message');
     }
   },

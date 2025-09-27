@@ -1,17 +1,7 @@
-### Erstellt von Cedric visit my [GitHub](https://cedric-cj.github.io/AboutMe/)
+### Erstellt von Cedric visit my [GitHub](https://spezialcode.de/)
 <template>
   <div class="container">
-    <header>
-      <nav>
-        <ul>
-          <li><router-link to="/">Startseite</router-link></li>
-          <li><router-link to="/unternehmen">Über Uns</router-link></li>
-          <li><router-link to="/galerie">Galerie</router-link></li>
-          <li><router-link to="/leistungen">Leistungen</router-link></li>
-        </ul>
-      </nav>
-      <img src="@/assets/Logo.gif" alt="Logo" class="logo">
-    </header>
+    <Header />
     <main>
       <h1>Galerie</h1>
       <div class="gallery">
@@ -27,37 +17,21 @@
       <div v-if="isLightboxOpen" class="lightbox" @click.self="closeLightbox">
         <button class="close-button" @click="closeLightbox">×</button>
         <div class="lightbox-content">
-          <button class="nav-button prev" @click.stop="prevImage">‹</button>
+          <button v-if="hasMultipleImages" class="nav-button prev" @click.stop="prevImage">‹</button>
           <div class="lightbox-image">
             <img v-if="!currentImage.slider" :src="currentImage.src" :alt="currentImage.alt"/>
             <BeforeAfterSlider v-else :before-src="currentImage.beforeSrc" :after-src="currentImage.afterSrc"/>
           </div>
-          <button class="nav-button next" @click.stop="nextImage">›</button>
+          <button v-if="hasMultipleImages" class="nav-button next" @click.stop="nextImage">›</button>
         </div>
       </div>
     </main>
-    <footer>
-      <div class="footer-content">
-        <div class="footer-left">
-          <p>Schnell - Zuverlässig - Günstig<br>Einmalig in Deutschland</p>
-        </div>
-        <div class="footer-right">
-          <p>Metallbaumeister Zigann<br>
-            Radlower Str. 1<br>
-            15848 Rietz-Neuendorf<br>
-            <a href="tel:+491634227950">Tel: 0163 / 42 27 950</a><br>
-            <a href="mailto:info@mz24.net">info@mz24.net</a>
-          </p>
-        </div>
-      </div>
-      <div class="footer-links">
-        <router-link to="/impressum">Impressum</router-link> |
-        <router-link to="/datenschutz">Datenschutz</router-link>
-      </div>
-    </footer>
+    <Footer />
   </div>
 </template>
 <script>
+import Header from '@/components/layout/Header.vue'
+import Footer from '@/components/layout/Footer.vue'
 import BeforeAfterSlider from './BeforeAfterSlider.vue';
 import BalkonVorher from '@/Bilder/Balkon/Balkon_vorher.JPG';
 import BalkonNachher from '@/Bilder/Balkon/Balkon_nachher.JPG';
@@ -82,6 +56,8 @@ import Sonstiges1 from '@/Bilder/Sonstiges 1.JPG';
 export default {
   name: 'GaleriePage',
   components: {
+    Header,
+    Footer,
     BeforeAfterSlider,
   },
   data() {
@@ -130,6 +106,9 @@ export default {
         return this.images[this.currentCategory][this.currentIndex];
       }
       return null;
+    },
+    hasMultipleImages() {
+      return this.currentCategory && this.images[this.currentCategory] && this.images[this.currentCategory].length > 1;
     },
   },
   methods: {
@@ -243,9 +222,22 @@ body {
 }
 
 .lightbox img{
-  max-width: 95vh;
-  max-height: 95vh;
+  max-width: 90vw;
+  max-height: 90vh;
   object-fit: contain;
+}
+
+/* Ensure any lightbox content (including BeforeAfterSlider) can scale large on desktop */
+.lightbox .lightbox-image {
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lightbox .lightbox-image > * {
+  max-width: 90vw;
+  max-height: 90vh;
 }
 
 .lightbox {
@@ -255,51 +247,74 @@ body {
 }
 
 .nav-button {
-  background: rgba(255, 255, 255, 0.6);
-  border: none;
-  font-size: 5vw;
-  cursor: pointer;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  -webkit-user-select: none;
-  user-select: none;
-  color: #000;
+  background: rgba(255, 255, 255, 0.88);
+  color: #111;
+  border: 2px solid rgba(0,0,0,0.2);
   border-radius: 50%;
-  width: 3em;
-  height: 3em;
+  width: clamp(40px, 4.2vh, 56px);
+  height: clamp(40px, 4.2vh, 56px);
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-size: clamp(16px, 2.2vh, 24px);
+  font-weight: 700;
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+  z-index: 10010;
+  backdrop-filter: blur(2px);
+  transition: transform 0.15s ease, background-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.nav-button:hover,
+.nav-button:focus-visible {
+  background: rgba(255, 255, 255, 0.98);
+  transform: translateY(-50%) scale(1.08);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  outline: none;
 }
 
 .close-button {
-  top: 10%;
-  right: 10%;
-  background: rgba(255, 255, 255, 0.6);
-  border: none;
-  font-size: 2em;
-  cursor: pointer;
   position: absolute;
-  transform: translateY(-50%);
-  user-select: none;
-  color: #000;
+  top: 16px;
+  right: 16px;
+  background: rgba(255, 255, 255, 0.88);
+  color: #111;
+  border: 2px solid rgba(0,0,0,0.2);
   border-radius: 50%;
-  width: 1em;
-  height: 1em;
+  width: clamp(36px, 4.5vh, 56px);
+  height: clamp(36px, 4.5vh, 56px);
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-size: clamp(18px, 3vh, 26px);
+  font-weight: 800;
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+  z-index: 10020;
+  transition: transform 0.15s ease, background-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.close-button:hover,
+.close-button:focus-visible {
+  background: rgba(255, 255, 255, 0.98);
+  transform: scale(1.08);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  outline: none;
 }
 
 .nav-button.prev {
-  left: 10px;
+  left: 16px;
 }
 
 .nav-button.next {
-  right: 10px;
+  right: 16px;
 }
 
 /* Responsive Design */
@@ -307,11 +322,52 @@ body {
   .image-item {
     flex: 1 0 calc(50% - 10px);
   }
+  .nav-button {
+    width: clamp(44px, 5.2vh, 64px);
+    height: clamp(44px, 5.2vh, 64px);
+    font-size: clamp(18px, 2.6vh, 26px);
+  }
+  .close-button {
+    width: clamp(40px, 5vh, 60px);
+    height: clamp(40px, 5vh, 60px);
+    font-size: clamp(18px, 2.6vh, 26px);
+    top: 12px;
+    right: 12px;
+  }
 }
 
 @media (max-width: 480px) {
   .image-item {
     flex: 1 0 50%;
+  }
+  .nav-button {
+    width: clamp(46px, 6vh, 70px);
+    height: clamp(46px, 6vh, 70px);
+    font-size: clamp(20px, 3vh, 28px);
+  }
+  .close-button {
+    width: clamp(44px, 5.5vh, 66px);
+    height: clamp(44px, 5.5vh, 66px);
+    font-size: clamp(20px, 3vh, 28px);
+  }
+}
+
+/* Desktop: größere Buttons und mehr Abstand von den Rändern */
+@media (min-width: 1024px) {
+  .nav-button {
+    width: 64px;
+    height: 64px;
+    font-size: 28px;
+  }
+  .nav-button.prev { left: 24px; }
+  .nav-button.next { right: 24px; }
+
+  .close-button {
+    width: 60px;
+    height: 60px;
+    font-size: 30px;
+    top: 20px;
+    right: 20px;
   }
 }
 </style>

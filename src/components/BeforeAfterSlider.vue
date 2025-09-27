@@ -1,3 +1,4 @@
+### Erstellt von Cedric visit my [GitHub](https://spezialcode.de/)
 <template>
   <div
       class="before-after-slider"

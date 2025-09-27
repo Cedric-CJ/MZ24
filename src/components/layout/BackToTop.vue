@@ -1,3 +1,4 @@
+### Erstellt von Cedric visit my [GitHub](https://spezialcode.de/)
 <template>
   <button v-if="visible" class="back-to-top" @click="scrollToTop"><img :src="backToTopImage" alt="Back to Top" />
   </button>
@@ -34,14 +35,13 @@ export default {
 </script>
 <style scoped>
 .back-to-top {
-  width: 10vw; /* Dynamische Breite */
-  height: 10vw; /* Dynamische Höhe */
-  max-width: 80px; /* Maximale Breite */
-  max-height: 80px; /* Maximale Höhe */
+  /* Verwende clamp, damit der Button auf großen Displays nicht zu groß wird */
+  width: clamp(44px, 8vw, 72px);
+  height: clamp(44px, 8vw, 72px);
   border-radius: 50%; /* Kreisform */
   position: fixed;
-  bottom: 5vh;
-  right: 5vw;
+  bottom: clamp(12px, 4vh, 32px);
+  right: clamp(12px, 4vw, 32px);
   background-color: #f39c12;
   display: flex;
   justify-content: center;
